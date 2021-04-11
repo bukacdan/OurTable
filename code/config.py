@@ -1,0 +1,2 @@
+# TODO: change this
+SECRET_KEY = b'\xda\xf3nN7\x7f;\xef\x9a\xb1FX\x8c\xf4\x91\xe4'
