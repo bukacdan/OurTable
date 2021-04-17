@@ -1,25 +1,35 @@
 <!DOCTYPE html>
+<html lang="cs">
+	<head>
+		{% block head %}
+		<meta charset="utf-8">
+		<title>
+			OurTable {% block title %}{% endblock %}
+		</title>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='icon.svg') }}" />
+		{% assets "scss_all" %}
+		<link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
+		{% endassets %}
+		{% endblock %}
+	</head>
+	<body>
+		<header class="header-global">
+			<section class="logo-wrapper">
+				<button class="btn-home" type="button">
+					<a href={{ url_for('home') }}>
+						<img alt="logo" class="logo" src={{ url_for('static', filename='icon.svg') }}>
+						<span class="logo-text">Our Table</span>
+					</a>
+				</button>
+			</section>
+		</header>
+		{% block content %}
+		{% endblock %}
 
-<title>{% block title %}{% endblock %} - Flaskr</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-<nav>
-	<h1>Flaskr</h1>
-	<ul>
-		{% if g.user %}
-		<li><span>{{ g.user['username'] }}</span></li>
-		<li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
-		{% else %}
-		<li><a href="{{ url_for('auth.register') }}">Register</a></li>
-		<li><a href="{{ url_for('auth.login') }}">Log In</a></li>
-		{% endif %}
-	</ul>
-</nav>
-<section class="content">
-	<header>
-		{% block header %}{% endblock %}
-	</header>
-	{% for message in get_flashed_messages() %}
-	<div class="flash">{{ message }}</div>
-	{% endfor %}
-	{% block content %}{% endblock %}
-</section>
+		{% block scripts %}
+		{% endblock %}
+	</body>
+</html>

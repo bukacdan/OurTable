@@ -15,3 +15,5 @@ pyparsing==3.0.0b2
 pytest==6.2.3
 toml==0.10.2
 Werkzeug==2.0.0rc3
+pyScss
+flask-assets

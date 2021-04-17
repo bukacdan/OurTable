@@ -1,7 +1,7 @@
 import os
 
 from flask import Flask
-
+from flask_assets import Environment, Bundle
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
@@ -17,20 +17,23 @@ def create_app(test_config=None):
         # Load the test config if passed in
         app.config.from_mapping(test_config)
 
+    assets = Environment(app)
+    assets.url = app.static_url_path
+    scss_files = [f for f in os.listdir('./app/' + str(app.static_url_path)) if f.endswith(".scss")]
+    scss_bundle = Bundle(*scss_files, filters='pyscss', output='all.css')
+    assets.register('scss_all', scss_bundle)
+
     # ensure the instance folder exists
     try:
         os.makedirs(app.instance_path)
     except OSError:
         pass
 
-    from . import db
-    db.init_app(app)
 
-    from . import auth
-    app.register_blueprint(auth.bp)
+    with app.app_context():
+        from . import db
+        db.init_app(app)
 
-    from . import blog
-    app.register_blueprint(blog.bp)
-    app.add_url_rule('/', endpoint='index')
-
+        from .controlers import home
+        
     return app
