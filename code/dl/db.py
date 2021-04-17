@@ -1,47 +1,68 @@
-import sqlite3
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import create_engine, MetaData, Table
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.automap import automap_base
 
-import click
-from flask import current_app, g
-from flask.cli import with_appcontext
+import psycopg2
+db_string = 'postgresql://postgres:postgres@localhost:5432/our_table'
 
+engine = create_engine ( db_string )
+connection = engine.connect()
+metadata = MetaData()
+Session = sessionmaker ( bind = engine )
+session = Session()
 
-def get_db():
-    # g as global: special object that is unique for each request
-    # current_app: also a special object that points to the Flask app handling the request
+Base = automap_base()
+Base.prepare ( engine, reflect = True )
 
-    if 'db' not in g:
-        g.db = sqlite3.connect(
-            current_app.config['DATABASE'],
-            detect_types=sqlite3.PARSE_DECLTYPES
-        )
-        g.db.row_factory = sqlite3.Row  # behave as dict
-
-    return g.db
-
-
-def close_db(e=None):
-    db = g.pop('db', None)
-
-    if db is not None:
-        db.close()
-
-
-def init_db():
-    db = get_db()
-
-    # this will open file relatively to the app
-    with current_app.open_resource('schema.sql') as f:
-        db.executescript(f.read().decode('utf8'))
+Address = Base.classes.Adresa
+Alergen = Base.classes.Alergen
+Food = Base.classes.Jidlo
+Menu = Base.classes.Menu
+FoodOrder = Base.classes.ObjednavkaJidla
+Reservation = Base.classes.Rezervace
+Schedule = Base.classes.Rozvrh
+Tabl = Base.classes.Stul
+Customer = Base.classes.Uzivatel
 
 
-@click.command('init-db')
-@with_appcontext
-def init_db_command():
-    """Clear the existing data and create new tables."""
-    init_db()
-    click.echo('Initialized the database.')
+def get_tables():
+    tables = []
+    for t in engine.table_names():
+        tables.append(t)
+    return tables
+
+def add ( src ):
+    session.add( src )
+    session.commit()
+
+def add_address ( city, psc, state, street ):
+    new_address = Address ( Mesto = city, Psc = psc, Stat = state, Ulice = street )
+    session.add ( new_address )
+    session.commit()
+    return
+
+def add_alergen ( name ):
+    new_alergen = Alergen ( Nazev = name )
+    session.add ( new_alergen )
+    session.commit()
+    return
 
 
-def init_app(app):
-    app.teardown_appcontext(close_db)  # called after returning the response
-    app.cli.add_command(init_db_command)  # called when you enter 'flask init-db'
+def delete_address ( id ):
+    old_addres = session.query ( Address ).filter ( Address.AdresaID == id ).first()
+    if old_addres == None:
+        return
+    session.delete ( old_addres )
+    session.commit()
+    return
+
+delete_address (50)
+result = session.query(Address).all()
+for r in result:
+    print( r.AdresaID )
+for c in Base.classes:
+    print ( c )
+for i in get_tables():
+    print ( i )

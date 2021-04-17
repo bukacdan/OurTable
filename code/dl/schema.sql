@@ -41,10 +41,10 @@ DROP TABLE IF EXISTS "Adresa" CASCADE
 DROP TABLE IF EXISTS "Alergen" CASCADE
 ;
 
-DROP TABLE IF EXISTS "je soucasti   " CASCADE
+DROP TABLE IF EXISTS "je_soucasti" CASCADE
 ;
 
-DROP TABLE IF EXISTS "je zarezervovan" CASCADE
+DROP TABLE IF EXISTS "je_zarezervovan" CASCADE
 ;
 
 DROP TABLE IF EXISTS "Jidlo" CASCADE
@@ -59,7 +59,7 @@ DROP TABLE IF EXISTS "ObjednavkaJidla" CASCADE
 DROP TABLE IF EXISTS "obsahuje" CASCADE
 ;
 
-DROP TABLE IF EXISTS "prebyva na adrese" CASCADE
+DROP TABLE IF EXISTS "prebyva_na_adrese" CASCADE
 ;
 
 DROP TABLE IF EXISTS "Rezervace" CASCADE
@@ -93,17 +93,19 @@ CREATE TABLE "Alergen"
 )
 ;
 
-CREATE TABLE "je soucasti   "
+CREATE TABLE "je_soucasti"
 (
 	"JidloID" integer NULL,
-	"Cislo" integer NULL
+	"Cislo" integer NULL,
+	PRIMARY KEY ("JidloID","Cislo")
 )
 ;
 
-CREATE TABLE "je zarezervovan"
+CREATE TABLE "je_zarezervovan"
 (
 	"RezervaceID" integer NULL,
-	"StulID" integer NULL
+	"StulID" integer NULL,
+	PRIMARY KEY ("RezervaceID","StulID")
 )
 ;
 
@@ -134,14 +136,16 @@ CREATE TABLE "ObjednavkaJidla"
 CREATE TABLE "obsahuje"
 (
 	"MenuID" integer NULL,
-	"JidloID" integer NULL
+	"JidloID" integer NULL,
+	PRIMARY KEY ("MenuID","JidloID")
 )
 ;
 
-CREATE TABLE "prebyva na adrese"
+CREATE TABLE "prebyva_na_adrese"
 (
 	"AdresaID" integer NULL,
-	"UzivatelID" integer NULL
+	"UzivatelID" integer NULL,
+	PRIMARY KEY ("AdresaID","UzivatelID")
 )
 ;
 
@@ -222,19 +226,19 @@ ALTER TABLE "Uzivatel" ADD CONSTRAINT "PK_Uzivatel"
 
 /* Create Foreign Key Constraints */
 
-ALTER TABLE "je soucasti   " ADD CONSTRAINT "FK_je soucasti   _Alergen"
+ALTER TABLE "je_soucasti" ADD CONSTRAINT "FK_je_soucasti_Alergen"
 	FOREIGN KEY ("Cislo") REFERENCES "Alergen" ("Cislo") ON DELETE No Action ON UPDATE No Action
 ;
 
-ALTER TABLE "je soucasti   " ADD CONSTRAINT "FK_je soucasti   _Jidlo"
+ALTER TABLE "je_soucasti" ADD CONSTRAINT "FK_je_soucasti_Jidlo"
 	FOREIGN KEY ("JidloID") REFERENCES "Jidlo" ("JidloID") ON DELETE No Action ON UPDATE No Action
 ;
 
-ALTER TABLE "je zarezervovan" ADD CONSTRAINT "FK_je zarezervovan_Rezervace"
+ALTER TABLE "je_zarezervovan" ADD CONSTRAINT "FK_je_zarezervovan_Rezervace"
 	FOREIGN KEY ("RezervaceID") REFERENCES "Rezervace" ("RezervaceID") ON DELETE No Action ON UPDATE No Action
 ;
 
-ALTER TABLE "je zarezervovan" ADD CONSTRAINT "FK_je zarezervovan_Stul"
+ALTER TABLE "je_zarezervovan" ADD CONSTRAINT "FK_je_zarezervovan_Stul"
 	FOREIGN KEY ("StulID") REFERENCES "Stul" ("StulID") ON DELETE No Action ON UPDATE No Action
 ;
 
@@ -250,11 +254,11 @@ ALTER TABLE "obsahuje" ADD CONSTRAINT "FK_obsahuje_Jidlo"
 	FOREIGN KEY ("JidloID") REFERENCES "Jidlo" ("JidloID") ON DELETE No Action ON UPDATE No Action
 ;
 
-ALTER TABLE "prebyva na adrese" ADD CONSTRAINT "FK_prebyva na adrese_Adresa"
+ALTER TABLE "prebyva_na_adrese" ADD CONSTRAINT "FK_prebyva_na_adrese_Adresa"
 	FOREIGN KEY ("AdresaID") REFERENCES "Adresa" ("AdresaID") ON DELETE No Action ON UPDATE No Action
 ;
 
-ALTER TABLE "prebyva na adrese" ADD CONSTRAINT "FK_prebyva na adrese_Uzivatel"
+ALTER TABLE "prebyva_na_adrese" ADD CONSTRAINT "FK_prebyva_na_adrese_Uzivatel"
 	FOREIGN KEY ("UzivatelID") REFERENCES "Uzivatel" ("UzivatelID") ON DELETE No Action ON UPDATE No Action
 ;
 
