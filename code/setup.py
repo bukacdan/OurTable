@@ -11,5 +11,7 @@ setup(
         'pytest',
         'coverage',
         'gunicorn',
+        'flask-assets',
+        'pyScss'
     ],
 )

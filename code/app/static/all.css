@@ -1,0 +1,169 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+  color: #242323;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px; }
+
+  button {
+    appearance: none;
+    background-color: transparent;
+    border: none; }
+
+    a {
+      text-decoration: none;
+      color: black;
+      transform: all 0.6s ease-out; }
+
+      a:hover {
+        text-decoration: underline;
+        transform: all 0.6s ease-out; }
+
+        .header-global {
+          width: 100%;
+          background-color: #dc1c22;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.75rem 0; }
+
+          .btn-home a {
+            display: flex;
+            align-items: center;
+            color: #fafafa; }
+
+            .logo-wrapper .logo {
+              width: 5rem;
+              height: 5rem; }
+
+              .logo-wrapper .logo-text {
+                font-size: 2.2rem;
+                font-family: "Dancing Script", cursive;
+                margin: 0 0.75rem; }
+
+                .full-page-section {
+                  width: 100%;
+                  height: calc(100vh - 3.5rem);
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center; }
+
+                  .btn-round {
+                    font-size: 400;
+                    padding: 0.75rem;
+                    border: solid 1px #dc1c22;
+                    border-radius: 0.75rem; }
+
+                    .btn-round a {
+                      text-transform: uppercase; }
+
+                      .btn-fill {
+                        background-color: #dc1c22; }
+
+                        .btn-fill a {
+                          color: #fafafa; }
+
+                          .headline-banner {
+                            font-size: 5rem;
+                            font-family: "Dancing Script", cursive;
+                            color: #dc1c22; }
+
+                            .headline-wrapper {
+                              text-align: center; }
+
+                              .subtitle {
+                                font-size: 1.8rem;
+                                font-weight: 300;
+                                text-transform: lowercase; }
+
+                                .headline-wrapper .headline {
+                                  margin-bottom: 0.5rem; }
+
+                                  .headline-wrapper .subtitle {
+                                    margin-top: 0.5rem; }
+
+                                    .actions {
+                                      margin: 0 auto;
+                                      width: 80%;
+                                      display: flex;
+                                      align-items: center;
+                                      justify-content: center; }
+
+                                      .actions button {
+                                        margin: 0 2rem; }
+
+html {
+  box-sizing: border-box; }
+
+  *, *:before, *:after {
+    box-sizing: inherit; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #fafafa;
+      color: #242323;
+      font-family: "Montserrat", sans-serif;
+      font-size: 16px; }
+
+      button {
+        appearance: none;
+        background-color: transparent;
+        border: none; }
+
+        a {
+          text-decoration: none;
+          color: black;
+          transform: all 0.6s ease-out; }
+
+          a:hover {
+            text-decoration: underline;
+            transform: all 0.6s ease-out; }
+
+            .header-global {
+              width: 100%;
+              background-color: #dc1c22;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 0.75rem 0; }
+
+              .btn-home a {
+                display: flex;
+                align-items: center;
+                color: #fafafa; }
+
+                .logo-wrapper .logo {
+                  width: 5rem;
+                  height: 5rem; }
+
+                  .logo-wrapper .logo-text {
+                    font-size: 2.2rem;
+                    font-family: "Dancing Script", cursive;
+                    margin: 0 0.75rem; }
+
+                    .full-page-section {
+                      width: 100%;
+                      height: calc(100vh - 10.5rem);
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                      justify-content: center; }
+
+                      .btn-round {
+                        font-size: 400;
+                        padding: 0.75rem;
+                        border: solid 2px #dc1c22;
+                        border-radius: 0.75rem; }
+
+                        .btn-round a {
+                          text-transform: uppercase;
+                          letter-spacing: 0.1rem; }
+
+                          .btn-fill {
+                            background-color: #dc1c22; }
+
+                            .btn-fill a {
+                              color: #fafafa; }
