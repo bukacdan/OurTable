@@ -15,4 +15,4 @@ build/
 
 .vim/
 
-app/static/.webassets-cache
+pl/static/css/
