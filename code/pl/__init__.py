@@ -17,12 +17,6 @@ def create_app(test_config=None):
         # Load the test config if passed in
         app.config.from_mapping(test_config)
 
-    assets = Environment(app)
-    assets.url = app.static_url_path
-    scss_files = [f for f in os.listdir('./app/' + str(app.static_url_path)) if f.endswith(".scss")]
-    scss_bundle = Bundle(*scss_files, filters='pyscss', output='all.css')
-    assets.register('scss_all', scss_bundle)
-
     # ensure the instance folder exists
     try:
         os.makedirs(app.instance_path)
@@ -31,9 +25,12 @@ def create_app(test_config=None):
 
 
     with app.app_context():
+        from .utils import bundles
+
         from . import db
         db.init_app(app)
 
-        from .controlers import home
+        from .home import controllers 
+        app.register_blueprint(controllers.home_bp)
         
     return app
