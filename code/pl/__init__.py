@@ -1,7 +1,7 @@
 import os
 
 from flask import Flask
-from flask_assets import Environment, Bundle
+
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
@@ -24,13 +24,10 @@ def create_app(test_config=None):
         pass
 
 
-    with app.app_context():
-        from .utils import bundles
+    from dl import db
+    db.init_app(app)
 
-        from . import db
-        db.init_app(app)
+    from .controller import home
+    app.register_blueprint(home.home_bp)
 
-        from .home import controllers 
-        app.register_blueprint(controllers.home_bp)
-        
     return app

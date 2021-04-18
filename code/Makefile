@@ -1,7 +1,7 @@
 all: debug
 
 run:
-	flask run
+	FLASK_APP=pl flask run
 
 activate:
 	. venv/bin/activate
@@ -12,4 +12,4 @@ install:
 	python setup.py install
 
 debug:
-	FLASK_ENV=development FLASK_DEBUG=1 flask run
+	FLASK_APP=pl FLASK_ENV=development FLASK_DEBUG=1 flask run

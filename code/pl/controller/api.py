@@ -1,7 +1,7 @@
 from flask import Flask, url_for, render_template, request, jsonify
 from markupsafe import escape
-from .db import add_address as add_address_db
-from .db import add_alergen as add_allergen_db
+from dl.db import add_address as add_address_db
+from dl.db import add_alergen as add_allergen_db
 #from . import auth
 
 app = Flask(__name__)
