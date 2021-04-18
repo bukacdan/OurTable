@@ -1,9 +1,36 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
 
-<head>
-</head>
+{% block content %}
+<section id="welcome" class="full-page-section">
+    <div class="headline-wrapper">
+        <h1 class="headline headline-banner">Our Table</h1>
+        <h4 class="subtitle subtitle-banner">Pohodlně si zarezervujte stůl on-line</h4>
+    </div>
+    <section class="actions">
+        <button type="button" class="btn-round btn-fill">
+            <a href="">Rezervovat stůl</a>
+        </button>
+        <button class="btn-round">
+            <a href="">Prohlédnout menu</a>
+        </button>
+    </section>
+</section>
+{% endblock %}
 
+{% block scripts %}
+<script>
+    const btns = document.querySelectorAll('.btn-round')
 
-<body>
-	test
-</body>
+    btns.forEach((btn) => {
+        btn.addEventListener('mouseenter', (e) => {
+            btn.classList.add('btn-fill');
+        })
+    })
+
+    btns.forEach((btn) => {
+        btn.addEventListener('mouseleave', () => {
+            btn.classList.remove('btn-fill');
+        })
+    })
+</script>
+{% endblock %}
