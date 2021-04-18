@@ -1,6 +1,4 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import create_engine, MetaData, Table
+from sqlalchemy import create_engine, MetaData, Table, func
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.automap import automap_base
 
@@ -13,7 +11,7 @@ metadata = MetaData()
 Session = sessionmaker ( bind = engine )
 session = Session()
 
-Base = automap_base()
+Base = automap_base( bind = engine )
 Base.prepare ( engine, reflect = True )
 
 Address = Base.classes.Adresa
@@ -25,44 +23,253 @@ Reservation = Base.classes.Rezervace
 Schedule = Base.classes.Rozvrh
 Tabl = Base.classes.Stul
 Customer = Base.classes.Uzivatel
+IsPartOf = Base.classes.je_soucasti
+Contains = Base.classes.obsahuje
+IsReserved = Base.classes.je_zarezervovan
+LivesAt = Base.classes.prebyva_na_adrese
+
 
 
 def get_tables():
     tables = []
-    for t in engine.table_names():
+    for t in Base.metadata.tables.keys():
         tables.append(t)
     return tables
 
-def add ( src ):
-    session.add( src )
-    session.commit()
+## add functions ##
+# These functions are missing some utility,
+# it is not recomended to use outside db.py
+# will be private -> TODO make private ( __* )
 
 def add_address ( city, psc, state, street ):
-    new_address = Address ( Mesto = city, Psc = psc, Stat = state, Ulice = street )
-    session.add ( new_address )
+    session.add ( Address ( Mesto = city, Psc = psc, Stat = state, Ulice = street ) )
     session.commit()
     return
 
 def add_alergen ( name ):
-    new_alergen = Alergen ( Nazev = name )
-    session.add ( new_alergen )
+    session.add ( Alergen ( Nazev = name ) )
     session.commit()
     return
 
+def add_food ( price, name ):
+    session.add ( Food ( Cena = price, Nazev = name ) )
+    session.commit()
+    return
+
+def add_menu ( until, since ):
+    session.add ( Menu ( Platnostdo = until, Platnostod = since ) )
+    session.commit()
+    return
+
+def add_foodorder ( count ):
+    session.add ( FoodOrder ( Pocet = count ) )
+    session.commit()
+    return
+# if function is not private, check for cutomer id
+def add_reservation ( until, since, customerID ):
+    session.add ( Reservation ( Datumdo = until, Datumod = since, UzivatelID = customerID ) )
+    session.commit()
+    return
+
+def add_schedule ( until, since, avaiable, tableID ):
+    session.add ( Schedule ( Datumdo = until, Datumod = since, Jedostupny = avaiable, StulID = tableID ) )
+    session.commit()
+    return
+
+def add_table ( space ):
+    session.add ( Tabl ( Pocetmist = space ) )
+    session.commit()
+    return
+
+def add_customer ( email, name, surname, phonenumber ):
+    session.add ( Customer ( Email = email, Jmeno = name, Prijmeni = surname, Telefon = phonenumber ) )
+    session.commit()
+    return
+
+def add_ispartof ( foodID, alergenNumber ):
+    session.add ( IsPartOf ( JidloID = foodID, Cislo = alergenNumber ) )
+    session.commit()
+    return
+
+def add_contains ( menuID, foodID ):
+    session.add ( Contains ( MenuID = menuID, JidloID = foodID ) )
+    session.commit()
+    return
+
+def add_isreserved ( reservationID, tableID ):
+    session.add ( IsReserved ( RezervaceID = reservationID, StulID = tableID ) )
+    session.commit()
+    return
+def add_livesat ( addressID, customerID ):
+    session.add ( LivesAt ( AdresaID = addressID, UzivatelID = customerID ) )
+    session.commit()
+    return
+
+## Delete functions ##    
+# These functions are missing some utility,
+# it is not recomended to use outside db.py
+# will be private -> TODO make private ( __* )
 
 def delete_address ( id ):
-    old_addres = session.query ( Address ).filter ( Address.AdresaID == id ).first()
-    if old_addres == None:
-        return
-    session.delete ( old_addres )
+    address = session.query ( Address ).filter ( Address.AdresaID == id ).first()
+    if address == None:
+        return 1
+    session.delete ( address )
     session.commit()
+    return 0
+
+def delete_alergen ( id ):
+    alergen = session.query ( Alergen ).filter ( Alergen.Cislo == id ).first()
+    if alergen == None:
+        return 1
+    session.delete ( alergen )
+    session.commit()
+    return 0
+
+def delete_food ( id ):
+    food = session.query ( Food ).filter ( Food.JidloID == id ).first()
+    if food == None:
+        return 1
+    session.delete ( food  )
+    session.commit()
+    return 0
+
+def delete_menu  ( id ):
+    menu = session.query ( Menu ).filter ( Menu.MenuID == id ).first()
+    if menu == None:
+        return 1
+    session.delete ( menu )
+    session.commit()
+    return 0
+
+def delete_foodorder ( id ):
+    foodorder = session.query ( FoodOrder ).filter ( FoodOrder.ObjednavkaJidlaID == id ).first()
+    if foodorder == None:
+        return 1
+    session.delete ( foodorder )
+    session.commit()
+    return 0
+
+def delete_reservation ( id ):
+    reservation = session.query ( Reservation ).filter ( Reservation.RezervaceID == id ).first()
+    if reservation == None:
+        return 1
+    session.delete ( reservation )
+    session.commit()
+    return 0
+
+def delete_schedule ( id ):
+    schedule = session.query ( Schedule ).filter ( Schedule.RozvrhID == id ).first()
+    if schedule == None:
+        return 1
+    session.delete ( schedule )
+    session.commit()
+    return 0
+
+def delete_table ( id ):
+    table = session.query ( Tabl ).filter ( Tabl.StulID == id ).first()
+    if table == None:
+        return 1
+    session.delete ( table )
+    session.commit()
+    return 0
+
+def delete_customer ( id ):
+    customer = session.query ( Customer ).filter ( Customer.UzivatelID == id ).first()
+    if customer == None:
+        return 1
+    session.delete ( customer )
+    session.commit()
+    return 0
+
+def delete_ispartof ( id ):
+    ispartof = session.query ( IsPartOf ).filter ( IsPartOf.Je_SoucastiID == id ).first()
+    if ispartof == None:
+        return 1
+    session.delete ( ispartof )
+    session.commit()
+    return 0
+
+def delete_contains ( id ):
+    contains = session.query ( Contains ).filter ( Contains.ObsahujeID == id ).first()
+    if contains == None:
+        return 1
+    session.delete ( contains )
+    session.commit()
+    return 0
+
+def delete_isreserved ( id ):
+    isreserved = session.query ( IsReserved ).filter ( IsReserved.Je_zarezervovanID == id ).first()
+    if isreserved == None:
+        return 1
+    session.delete ( isreserved )
+    session.commit()
+    return 0
+
+def delete_livesat ( id ):
+    livesat = session.query ( LivesAt ).filter ( LivesAt.Prebyva_na_adreseID == id ).first()
+    if livesat == None:
+        return 1
+    session.delete ( livesat )
+    session.commit()
+    return 0
+
+## Tests ##
+
+#TEST ONLY ON NEW DATABASE
+def try_all():
+    add_address ( "Praha", 15000, "CZ", "Londynska" )
+
+    add_alergen ( "roztoci" )
+
+    add_food ( 129, "Svickova" )
+
+    add_menu ( "12.01.2020", "06.01.2020" )
+
+    add_foodorder ( 10 )
+
+    add_customer ( "jd@gmail.com", "John", "Doe", "111" )
+
+    #Why date?
+    add_reservation ( "12.01.2020", "06.01.2020", 1 )
+
+    add_table ( 5 )
+
+    add_schedule ( "12.01.2020", "06.01.2020", True, 1 )
+
+    add_ispartof ( 1, 1 )
+
+    add_contains ( 1, 1 )
+
+    add_isreserved ( 1, 1 )
+    
+    add_livesat ( 1, 1 )
+
+    delete_livesat ( 1 )
+    delete_isreserved ( 1 )
+    delete_contains ( 1 )
+    delete_ispartof ( 1 )
+    delete_schedule ( 1 )
+    delete_table ( 1 )
+    delete_reservation ( 1 )
+    delete_customer ( 1 )
+    delete_foodorder ( 1 )
+    delete_menu ( 1 )
+    delete_food ( 1 )
+    delete_alergen ( 1 )
+    delete_address ( 1 )
+
     return
 
-delete_address (50)
-result = session.query(Address).all()
-for r in result:
-    print( r.AdresaID )
-for c in Base.classes:
-    print ( c )
-for i in get_tables():
-    print ( i )
+def delete_in_wrong_order():
+    add_address ( "Praha", 15000, "CZ", "Londynska" )
+    add_customer ( "jd@gmail.com", "John", "Doe", "111" )
+    idAdd = session.query ( func.max ( Address.AdresaID ) ).scalar()
+    idCustomer = session.query ( func.max ( Customer.UzivatelID ) ).scalar()
+
+    add_livesat ( idAdd, idCustomer )
+    delete_address ( idAdd )
+    return
+
+## ##
+
