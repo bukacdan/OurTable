@@ -1,5 +1,5 @@
 from .imapper import IMapper
-from dl.db.entity.customer import Customer
+from dl.entity.customer import Customer
 
 
 class CustomerMapper(IMapper):
