@@ -1,6 +1,6 @@
 from .imapper import IMapper
 from dl.entity.base import Session
-from dl.entity.mealorder import MealOrder
+from dl.entity.meal_order import MealOrder
 
 
 class MealOrderMapper(IMapper):
