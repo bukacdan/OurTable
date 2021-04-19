@@ -1,3 +1,4 @@
-from .declaration import Base
+from .base import Base
+
 
 Schedule = Base.classes.Rozvrh

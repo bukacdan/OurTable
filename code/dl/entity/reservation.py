@@ -1,3 +1,4 @@
-from .declaration import Base
+from .base import Base
+
 
 Reservation = Base.classes.Rezervace
