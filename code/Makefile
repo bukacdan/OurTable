@@ -13,3 +13,10 @@ install:
 
 debug:
 	FLASK_APP=pl FLASK_ENV=development FLASK_DEBUG=1 flask run
+
+postgres:
+	sudo apt-get install postgresql postgresql-client
+
+createdb:
+	createdb our_table
+	psql postgres -h 127.0.0.1 -d our_table -f dl/schema.sql
