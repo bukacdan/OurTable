@@ -112,107 +112,107 @@ def add_livesat ( addressID, customerID ):
 
 def delete_address ( id ):
     address = session.query ( Address ).filter ( Address.AdresaID == id ).first()
-    if address == None:
-        return 1
+    if address is None:
+        return False
     session.delete ( address )
     session.commit()
-    return 0
+    return True
 
 def delete_alergen ( id ):
     alergen = session.query ( Alergen ).filter ( Alergen.Cislo == id ).first()
-    if alergen == None:
-        return 1
+    if alergen is None:
+        return False
     session.delete ( alergen )
     session.commit()
-    return 0
+    return True
 
 def delete_food ( id ):
     food = session.query ( Food ).filter ( Food.JidloID == id ).first()
-    if food == None:
-        return 1
+    if food is None:
+        return False
     session.delete ( food  )
     session.commit()
-    return 0
+    return True
 
 def delete_menu  ( id ):
     menu = session.query ( Menu ).filter ( Menu.MenuID == id ).first()
-    if menu == None:
-        return 1
+    if menu is None:
+        return False
     session.delete ( menu )
     session.commit()
-    return 0
+    return True
 
 def delete_foodorder ( id ):
     foodorder = session.query ( FoodOrder ).filter ( FoodOrder.ObjednavkaJidlaID == id ).first()
-    if foodorder == None:
-        return 1
+    if foodorder is None:
+        return False
     session.delete ( foodorder )
     session.commit()
-    return 0
+    return True
 
 def delete_reservation ( id ):
     reservation = session.query ( Reservation ).filter ( Reservation.RezervaceID == id ).first()
-    if reservation == None:
-        return 1
+    if reservation is None:
+        return False
     session.delete ( reservation )
     session.commit()
-    return 0
+    return True
 
 def delete_schedule ( id ):
     schedule = session.query ( Schedule ).filter ( Schedule.RozvrhID == id ).first()
-    if schedule == None:
-        return 1
+    if schedule is None:
+        return False
     session.delete ( schedule )
     session.commit()
-    return 0
+    return True
 
 def delete_table ( id ):
     table = session.query ( Tabl ).filter ( Tabl.StulID == id ).first()
-    if table == None:
-        return 1
+    if table is None:
+        return False
     session.delete ( table )
     session.commit()
-    return 0
+    return True
 
 def delete_customer ( id ):
     customer = session.query ( Customer ).filter ( Customer.UzivatelID == id ).first()
-    if customer == None:
-        return 1
+    if customer is None:
+        return False
     session.delete ( customer )
     session.commit()
-    return 0
+    return True
 
 def delete_ispartof ( id ):
     ispartof = session.query ( IsPartOf ).filter ( IsPartOf.Je_SoucastiID == id ).first()
-    if ispartof == None:
-        return 1
+    if ispartof is None:
+        return False
     session.delete ( ispartof )
     session.commit()
-    return 0
+    return True
 
 def delete_contains ( id ):
     contains = session.query ( Contains ).filter ( Contains.ObsahujeID == id ).first()
-    if contains == None:
-        return 1
+    if contains is None:
+        return False
     session.delete ( contains )
     session.commit()
-    return 0
+    return True
 
 def delete_isreserved ( id ):
     isreserved = session.query ( IsReserved ).filter ( IsReserved.Je_zarezervovanID == id ).first()
-    if isreserved == None:
-        return 1
+    if isreserved is None:
+        return False
     session.delete ( isreserved )
     session.commit()
-    return 0
+    return True
 
 def delete_livesat ( id ):
     livesat = session.query ( LivesAt ).filter ( LivesAt.Prebyva_na_adreseID == id ).first()
-    if livesat == None:
-        return 1
+    if livesat is None:
+        return False
     session.delete ( livesat )
     session.commit()
-    return 0
+    return True
 
 ## Tests ##
 
@@ -273,3 +273,4 @@ def delete_in_wrong_order():
 
 ## ##
 
+try_all()
