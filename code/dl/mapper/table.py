@@ -1,9 +1,9 @@
-from .base import Base
 from dl.entity.base import Session
 from dl.entity.table import Table
+from dl.mapper import ITableMapper
 
 
-class TableMapper(Base):
+class TableMapper(ITableMapper):
     def __init__(self):
         super().__init__(Table)
 

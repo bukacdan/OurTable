@@ -1,9 +1,9 @@
-from .base import Base
 from dl.entity.base import Session
 from dl.entity.alergen import Alergen
+from dl.mapper.ialergen import IAlergenMapper
 
 
-class AlergenMapper(Base):
+class AlergenMapper(IAlergenMapper):
     def __init__(self):
         super().__init__(Alergen)
 

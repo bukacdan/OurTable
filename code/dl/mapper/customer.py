@@ -1,9 +1,9 @@
-from .base import Base
 from dl.entity.base import Session
 from dl.entity.customer import Customer
+from dl.mapper.icustomer import ICustomerMapper
 
 
-class CustomerMapper(Base):
+class CustomerMapper(ICustomerMapper):
     def __init__(self):
         super().__init__(Customer)
 

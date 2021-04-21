@@ -1,9 +1,9 @@
-from .base import Base
 from dl.entity.base import Session
 from dl.entity.schedule import Schedule
+from dl.mapper.ischedule import IScheduleMapper
 
 
-class ScheduleMapper(Base):
+class ScheduleMapper(IScheduleMapper):
     def __init__(self):
         super().__init__(Schedule)
 

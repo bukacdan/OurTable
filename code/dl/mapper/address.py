@@ -1,9 +1,9 @@
-from .base import Base
 from dl.entity.base import Session
 from dl.entity.address import Address
+from dl.mapper.iaddress import IAddressMapper
 
 
-class AddressMapper(Base):
+class AddressMapper(IAddressMapper):
     def __init__(self):
         super().__init__(Address)
 

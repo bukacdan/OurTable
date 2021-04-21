@@ -1,9 +1,9 @@
-from .base import Base
 from dl.entity.base import Session
 from dl.entity.meal import Meal
+from dl.mapper.imeal import IMealMapper
 
 
-class MealMapper(Base):
+class MealMapper(IMealMapper):
     def __init__(self):
         super().__init__(Meal)
 

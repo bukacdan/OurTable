@@ -1,9 +1,9 @@
-from .base import Base
 from dl.entity.base import Session
 from dl.entity.reservation import Reservation
+from dl.mapper.ireservation import IReservationMapper
 
 
-class ReservationMapper(Base):
+class ReservationMapper(IReservationMapper):
     def __init__(self):
         super().__init__(Reservation)
 

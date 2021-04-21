@@ -1,9 +1,9 @@
-from .base import Base
 from dl.entity.base import Session
 from dl.entity.menu import Menu
+from dl.mapper.imenu import IMenuMapper
 
 
-class MenuMapper(Base):
+class MenuMapper(IMenuMapper):
     def __init__(self):
         super().__init__(Menu)
 
