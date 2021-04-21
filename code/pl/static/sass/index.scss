@@ -53,6 +53,35 @@ a:hover {
   transform: all 0.6s ease-out;
 }
 
+.headline {
+  color: $color_red;
+  font-family: $font_secondary;
+}
+
+.headline-maxi {
+  font-size: $font_maxi;
+}
+
+.headline-big {
+  font-size: $font_big;
+}
+
+.subtitle {
+  font-weight: $font_light;
+}
+
+.subtitle-big {
+  font-size: $font_big;
+}
+
+.subtitle-semi-big {
+  font-size: $font_semi_big;
+}
+
+.subtitle-medium {
+  font-size: $font_medium
+}
+
 .header-global {
   width: 100%;
   background-color: $color_red;
