@@ -4,6 +4,9 @@ from dl.mapper.icustomer import ICustomerMapper
 
 
 class CustomerMapper(ICustomerMapper):
+    def __init__(self):
+        pass
+
     def get_all(self):
         customers = session.query(Customer).all()
         return customers

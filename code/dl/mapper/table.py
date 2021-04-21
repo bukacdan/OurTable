@@ -6,6 +6,9 @@ import datetime
 
 
 class TableMapper(ITableMapper):
+    def __init__(self):
+        pass
+
     def get_all(self):
         tables = session.query(Table).all()
         return tables

@@ -4,6 +4,9 @@ from dl.mapper.imeal_order import IMealOrderMapper
 
 
 class MealOrderMapper(IMealOrderMapper):
+    def __init__(self):
+        pass
+
     def get_all(self):
         mealorders = session.query(MealOrder).all()
         return mealorders

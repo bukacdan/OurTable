@@ -4,6 +4,9 @@ from dl.mapper.ialergen import IAlergenMapper
 
 
 class AlergenMapper(IAlergenMapper):
+    def __init__(self):
+        pass
+
     def get_all(self):
         alergens = session.query(Alergen).all()
         return alergens

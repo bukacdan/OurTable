@@ -4,6 +4,9 @@ from dl.mapper.ischedule import IScheduleMapper
 
 
 class ScheduleMapper(IScheduleMapper):
+    def __init__(self):
+        pass
+
     def get_all(self):
         schedules = session.query(Schedule).all()
         return schedules

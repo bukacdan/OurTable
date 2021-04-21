@@ -4,6 +4,9 @@ from dl.mapper.ireservation import IReservationMapper
 
 
 class ReservationMapper(IReservationMapper):
+    def __init__(self):
+        pass
+
     def get_all(self):
         reservations = session.query(Reservation).all()
         return reservations

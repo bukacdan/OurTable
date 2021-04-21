@@ -4,6 +4,9 @@ from dl.mapper.iaddress import IAddressMapper
 
 
 class AddressMapper(IAddressMapper):
+    def __init__(self):
+        pass
+
     def get_all(self):
         addresses = session.query(Address).all()
         return addresses

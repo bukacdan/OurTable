@@ -4,6 +4,9 @@ from dl.mapper.imenu import IMenuMapper
 
 
 class MenuMapper(IMenuMapper):
+    def __init__(self):
+        pass
+
     def get_all(self):
         menus = session.query(Menu).all()
         return menus
