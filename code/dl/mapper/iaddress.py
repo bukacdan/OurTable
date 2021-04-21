@@ -1,5 +1,5 @@
-from .ibase import IBase
+from .ibase import IBaseMapper
 
 
-class IAddress(IBase):
+class IAddressMapper(IBaseMapper):
     pass

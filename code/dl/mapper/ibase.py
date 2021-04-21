@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 # Interface class
 
-class IBase(ABC):
+class IBaseMapper(ABC):
     # [@param-return] All objects from specific table in database
     @abstractmethod
     def get_all():

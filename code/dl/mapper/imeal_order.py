@@ -1,5 +1,5 @@
-from .ibase import IBase
+from .ibase import IBaseMapper
 
 
-class IMealOrder(IBase):
+class IMealOrderMapper(IBaseMapper):
     pass
