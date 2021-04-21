@@ -27,3 +27,20 @@ class ReservationForm(FlaskForm):
     )
 
     submit = SubmitField('Rezervovat')
+
+
+class TableSelectForm(FlaskForm):
+    """
+    Simple form for user to select table id
+    """
+    table_id = SelectField(
+        'vyberte číslo stolu',
+        validators=[DataRequired()],
+        choices=[])
+
+    submit = SubmitField('Vybrat')
+
+
+    def __init__(self, tables, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.table_id.choices = list(map(lambda x: x.StulID, tables))

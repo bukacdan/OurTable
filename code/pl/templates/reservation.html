@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<section id="reservation">
+<section id="reservation" class="full-page-section">
     <hgroup class="headline-wrapper">
         <h1 class="headline headline-big">
             Rezervace
@@ -15,7 +15,7 @@
         </h2>
     </hgroup>
     <div class="form-wrapper">
-        <form class="reservation-form" action="/reserve" method="POST">
+        <form class="reservation-form" action={{url_for('reservation_bp.select_table')}} method="POST">
             <fieldset class="inputset">
                 <label class="input-label">
                     {{ form.guests_cnt.label }}
