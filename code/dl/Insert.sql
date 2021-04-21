@@ -33,7 +33,7 @@ INSERT INTO "Rozvrh" ("Datumdo", "Datumod", "Jedostupny", "StulID") VALUES ('202
 
 /* Inserting alergens */
 
-INSERT INTO "Alergen" ("Cislo", "Nazev") VALUES (1, 'Lepek');,
+INSERT INTO "Alergen" ("Cislo", "Nazev") VALUES (1, 'Lepek');
 INSERT INTO "Alergen" ("Cislo", "Nazev") VALUES (2, 'Korýši');
 INSERT INTO "Alergen" ("Cislo", "Nazev") VALUES (3, 'Vejce');
 INSERT INTO "Alergen" ("Cislo", "Nazev") VALUES (4, 'Ryby');
@@ -46,4 +46,4 @@ INSERT INTO "Alergen" ("Cislo", "Nazev") VALUES (10, 'Hořčice');
 INSERT INTO "Alergen" ("Cislo", "Nazev") VALUES (11, 'Sezam');
 INSERT INTO "Alergen" ("Cislo", "Nazev") VALUES (12, 'Oxid siřičitý a siřičitany');
 INSERT INTO "Alergen" ("Cislo", "Nazev") VALUES (13, 'Vlčí bob');
-INSERT INTO "Alergen" ("Cislo", "Nazev") VALUES (14. 'Měkkýši');
+INSERT INTO "Alergen" ("Cislo", "Nazev") VALUES (14, 'Měkkýši');
