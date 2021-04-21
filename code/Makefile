@@ -18,7 +18,7 @@ postgres:
 	sudo apt-get install postgresql postgresql-client
 
 createdb:
-	sudo -u postgres psql -c "CREATE DATABASE our_table;
+	sudo -u postgres psql -c "CREATE DATABASE our_table";
 	sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"
 	psql postgres -h 127.0.0.1 -d our_table -f dl/schema.sql
 	psql -d our_table -a -f dl/Insert.sql
