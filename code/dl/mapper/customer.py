@@ -1,29 +1,24 @@
-from .imapper import IMapper
+from .base import Base
 from dl.entity.base import Session
 from dl.entity.customer import Customer
 
 
-class CustomerMapper(IMapper):
-    @staticmethod
-    def get_all():
-        customers = Session.query(Customer).all()
-        return customers
+class CustomerMapper(Base):
+    def __init__(self):
+        super().__init__(Customer)
 
-    @staticmethod
-    def get(objID):
+    def get(self, objID):
         return Session.query(Customer).filter(Customer.UzivatelID == objID).first()
 
-    @staticmethod
-    def add(obj):
-        if CustomerMapper.get(obj.UzivatelID):
+    def add(self, obj):
+        if self.get(obj.UzivatelID):
             return False
         Session.add(obj)
         Session.commit()
         return True
 
-    @staticmethod
-    def delete(obj):
-        if not CustomerMapper.get(obj.UzivatelID):
+    def delete(self, obj):
+        if not self.get(obj.UzivatelID):
             return False
         Session.delete(obj)
         Session.commit()

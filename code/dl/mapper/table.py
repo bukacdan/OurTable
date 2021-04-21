@@ -1,29 +1,24 @@
-from .imapper import IMapper
+from .base import Base
 from dl.entity.base import Session
 from dl.entity.table import Table
 
 
-class TableMapper(IMapper):
-    @staticmethod
-    def get_all():
-        tables = Session.query(Table).all()
-        return tables
+class TableMapper(Base):
+    def __init__(self):
+        super().__init__(Table)
 
-    @staticmethod
-    def get(objID):
+    def get(self, objID):
         return Session.query(Table).filter(Table.StulID == objID).first()
 
-    @staticmethod
-    def add(obj):
-        if TableMapper.get(obj.StulID):
+    def add(self, obj):
+        if self.get(obj.StulID):
             return False
         Session.add(obj)
         Session.commit()
         return True
 
-    @staticmethod
-    def delete(obj):
-        if not TableMapper.get(obj.StulID):
+    def delete(self, obj):
+        if not self.get(obj.StulID):
             return False
         Session.delete(obj)
         Session.commit()

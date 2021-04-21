@@ -1,29 +1,24 @@
-from .imapper import IMapper
+from .base import Base
 from dl.entity.base import Session
 from dl.entity.menu import Menu
 
 
-class MenuMapper(IMapper):
-    @staticmethod
-    def get_all():
-        menus = Session.query(Menu).all()
-        return menus
+class MenuMapper(Base):
+    def __init__(self):
+        super().__init__(Menu)
 
-    @staticmethod
-    def get(objID):
+    def get(self, objID):
         return Session.query(Menu).filter(Menu.MenuID == objID).first()
 
-    @staticmethod
-    def add(obj):
-        if MenuMapper.get(obj.MenuID):
+    def add(self, obj):
+        if self.get(obj.MenuID):
             return False
         Session.add(obj)
         Session.commit()
         return True
 
-    @staticmethod
-    def delete(obj):
-        if not MenuMapper.get(obj.MenuID):
+    def delete(self, obj):
+        if not self.get(obj.MenuID):
             return False
         Session.delete(obj)
         Session.commit()
