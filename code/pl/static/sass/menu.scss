@@ -1,7 +1,8 @@
-@import './stylesheet.scss';
+@import './index.scss';
 
 #menu .headline-wrapper {
     margin-bottom: 2.8rem;
+    text-align: center;
 }
 
 #menu .menu-list {
@@ -43,7 +44,7 @@
 
 #menu .menu-list .menu-item .item-price {
     color: $color_red;
-    font-size: $font_normal;
+    font-size: $font_regular;
     display: inline-block;
     width: 100%;
     text-align: right;
@@ -55,6 +56,6 @@
     }
 
     #menu .menu-list .menu-item::before {
-        font-size: $font_normal;
+        font-size: $font_regular;
     }
 }
