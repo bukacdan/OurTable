@@ -1,4 +1,4 @@
-from dl.entity.base import Session
+from dl.entity.base import session
 from dl.entity.meal_order import MealOrder
 from dl.mapper.imeal_order import IMealOrderMapper
 
@@ -8,18 +8,18 @@ class MealOrderMapper(IMealOrderMapper):
         super().__init__(MealOrder)
 
     def get(self, objID):
-        return Session.query(MealOrder).filter(MealOrder.Objednavka_jidlaID == objID).first()
+        return session.query(MealOrder).filter(MealOrder.Objednavka_jidlaID == objID).first()
 
     def add(self, obj):
         if self.get(obj.Objednavka_jidlaID):
             return False
-        Session.add(obj)
-        Session.commit()
+        session.add(obj)
+        session.commit()
         return True
 
     def delete(self, obj):
         if not self.get(obj.Objednavka_jidlaID):
             return False
-        Session.delete(obj)
-        Session.commit()
+        session.delete(obj)
+        session.commit()
         return True

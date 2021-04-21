@@ -1,6 +1,6 @@
-from dl.entity.base import Session
+from dl.entity.base import session
 from dl.entity.table import Table
-from dl.mapper import ITableMapper
+from dl.mapper.itable import ITableMapper
 
 
 class TableMapper(ITableMapper):
@@ -8,18 +8,18 @@ class TableMapper(ITableMapper):
         super().__init__(Table)
 
     def get(self, objID):
-        return Session.query(Table).filter(Table.StulID == objID).first()
+        return session.query(Table).filter(Table.StulID == objID).first()
 
     def add(self, obj):
         if self.get(obj.StulID):
             return False
-        Session.add(obj)
-        Session.commit()
+        session.add(obj)
+        session.commit()
         return True
 
     def delete(self, obj):
         if not self.get(obj.StulID):
             return False
-        Session.delete(obj)
-        Session.commit()
+        session.delete(obj)
+        session.commit()
         return True

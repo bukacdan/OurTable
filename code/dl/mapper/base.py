@@ -1,5 +1,5 @@
 from .ibase import IBaseMapper
-from dl.entity.base import Session
+from dl.entity.base import session
 
 
 class BaseMapper(IBaseMapper):
@@ -7,5 +7,5 @@ class BaseMapper(IBaseMapper):
         self.item = item
 
     def get_all(self):
-        items = Session.query(self.item).all()
+        items = session.query(self.item).all()
         return items
