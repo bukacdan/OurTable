@@ -1,29 +1,25 @@
-from .imapper import IMapper
 from dl.entity.base import session
 from dl.entity.address import Address
+from dl.mapper.iaddress import IAddressMapper
 
 
-class AddressMapper(IMapper):
-    @staticmethod
-    def get_all():
+class AddressMapper(IAddressMapper):
+    def get_all(self):
         addresses = session.query(Address).all()
         return addresses
 
-    @staticmethod
-    def get(objID):
+    def get(self, objID):
         return session.query(Address).filter(Address.AdresaID == objID).first()
 
-    @staticmethod
-    def add(obj):
-        if AddressMapper.get(obj.AdresaID):
+    def add(self, obj):
+        if self.get(obj.AdresaID):
             return False
         session.add(obj)
         session.commit()
         return True
 
-    @staticmethod
-    def delete(obj):
-        if not AddressMapper.get(obj.AdresaID):
+    def delete(self, obj):
+        if not self.get(obj.AdresaID):
             return False
         session.delete(obj)
         session.commit()

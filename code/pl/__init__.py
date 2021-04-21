@@ -1,7 +1,11 @@
-import os
+import os, sys, inspect
 
 from flask import Flask
+from flask_injector import FlaskInjector
+
 from sassutils.wsgi import SassMiddleware
+
+from config import configure
 
 
 def create_app(test_config=None):
@@ -28,10 +32,14 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    with app.app_context():
-        from .controller import home, menu, reservation
-        app.register_blueprint(home.home_bp)
-        app.register_blueprint(menu.menu_bp)
-        app.register_blueprint(reservation.reservation_bp)
+    #from dl import db
+    #db.init_app(app)
+
+    from .controller import home, menu, reservation
+    app.register_blueprint(home.home_bp)
+    app.register_blueprint(menu.menu_bp)
+    app.register_blueprint(reservation.reservation_bp)
+
+    FlaskInjector(app=app, modules=[configure])
 
     return app

@@ -1,29 +1,25 @@
-from .imapper import IMapper
 from dl.entity.base import session
 from dl.entity.schedule import Schedule
+from dl.mapper.ischedule import IScheduleMapper
 
 
-class ScheduleMapper(IMapper):
-    @staticmethod
-    def get_all():
+class ScheduleMapper(IScheduleMapper):
+    def get_all(self):
         schedules = session.query(Schedule).all()
         return schedules
 
-    @staticmethod
-    def get(objID):
+    def get(self, objID):
         return session.query(Schedule).filter(Schedule.RozvrhID == objID).first()
 
-    @staticmethod
-    def add(obj):
-        if ScheduleMapper.get(obj.RozvrhID):
+    def add(self, obj):
+        if self.get(obj.RozvrhID):
             return False
         session.add(obj)
         session.commit()
         return True
 
-    @staticmethod
-    def delete(obj):
-        if not ScheduleMapper.get(obj.RozvrhID):
+    def delete(self, obj):
+        if not self.get(obj.RozvrhID):
             return False
         session.delete(obj)
         session.commit()

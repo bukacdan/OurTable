@@ -1,29 +1,25 @@
-from .imapper import IMapper
 from dl.entity.base import session
 from dl.entity.meal_order import MealOrder
+from dl.mapper.imeal_order import IMealOrderMapper
 
 
-class MealOrderMapper(IMapper):
-    @staticmethod
-    def get_all():
+class MealOrderMapper(IMealOrderMapper):
+    def get_all(self):
         mealorders = session.query(MealOrder).all()
         return mealorders
 
-    @staticmethod
-    def get(objID):
+    def get(self, objID):
         return session.query(MealOrder).filter(MealOrder.Objednavka_jidlaID == objID).first()
 
-    @staticmethod
-    def add(obj):
-        if MealOrderMapper.get(obj.Objednavka_jidlaID):
+    def add(self, obj):
+        if self.get(obj.Objednavka_jidlaID):
             return False
         session.add(obj)
         session.commit()
         return True
 
-    @staticmethod
-    def delete(obj):
-        if not MealOrderMapper.get(obj.Objednavka_jidlaID):
+    def delete(self, obj):
+        if not self.get(obj.Objednavka_jidlaID):
             return False
         session.delete(obj)
         session.commit()

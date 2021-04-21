@@ -1,29 +1,25 @@
-from .imapper import IMapper
 from dl.entity.base import session
 from dl.entity.meal import Meal
+from dl.mapper.imeal import IMealMapper
 
 
-class MealMapper(IMapper):
-    @staticmethod
-    def get_all():
+class MealMapper(IMealMapper):
+    def get_all(self):
         meals = session.query(Meal).all()
         return meals
 
-    @staticmethod
-    def get(objID):
+    def get(self, objID):
         return session.query(Meal).filter(Meal.JidloID == objID).first()
 
-    @staticmethod
-    def add(obj):
-        if MealMapper.get(obj.JidloID):
+    def add(self, obj):
+        if self.get(obj.JidloID):
             return False
         session.add(obj)
         session.commit()
         return True
 
-    @staticmethod
-    def delete(obj):
-        if not MealMapper.get(obj.JidloID):
+    def delete(self, obj):
+        if not self.get(obj.JidloID):
             return False
         session.delete(obj)
         session.commit()

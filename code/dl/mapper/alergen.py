@@ -1,29 +1,25 @@
-from .imapper import IMapper
 from dl.entity.base import session
 from dl.entity.alergen import Alergen
+from dl.mapper.ialergen import IAlergenMapper
 
 
-class AlergenMapper(IMapper):
-    @staticmethod
-    def get_all():
+class AlergenMapper(IAlergenMapper):
+    def get_all(self):
         alergens = session.query(Alergen).all()
         return alergens
 
-    @staticmethod
-    def get(objID):
+    def get(self, objID):
         return session.query(Alergen).filter(Alergen.Cislo == objID).first()
 
-    @staticmethod
-    def add(obj):
-        if AlergenMapper.get(obj.Cislo):
+    def add(self, obj):
+        if self.get(obj.Cislo):
             return False
         session.add(obj)
         session.commit()
         return True
 
-    @staticmethod
-    def delete(obj):
-        if not AlergenMapper.get(obj.Cislo):
+    def delete(self, obj):
+        if not self.get(obj.Cislo):
             return False
         session.delete(obj)
         session.commit()
