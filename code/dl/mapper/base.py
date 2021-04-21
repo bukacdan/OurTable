@@ -1,8 +1,8 @@
-from .ibase import IBase
+from .ibase import IBaseMapper
 from dl.entity.base import Session
 
 
-class Base(IBase):
+class BaseMapper(IBaseMapper):
     def __init__(self, item):
         self.item = item
 

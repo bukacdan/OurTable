@@ -1,5 +1,5 @@
-from .ibase import IBase
+from .ibase import IBaseMapper
 
 
-class IMenu(IBase):
+class IMenuMapper(IBaseMapper):
     pass
