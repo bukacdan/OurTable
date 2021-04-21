@@ -17,6 +17,8 @@ $color_red: #dc1c22;
 $color_white: #fafafa;
 $color_blackish: #242323;
 
+$viewport_small: 518px;
+
 html {
   box-sizing: border-box;
 }
@@ -116,6 +118,12 @@ a:hover {
   align-items: center;
   justify-content: center;
 }
+
+
+.headline-wrapper {
+  text-align: center;
+}
+
 
 .btn-round {
   font-size: $font_regular;

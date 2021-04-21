@@ -28,11 +28,10 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-
-    from dl import db
-    db.init_app(app)
-
-    from .controller import home
-    app.register_blueprint(home.home_bp)
+    with app.app_context():
+        from .controller import home, menu, reservation
+        app.register_blueprint(home.home_bp)
+        app.register_blueprint(menu.menu_bp)
+        app.register_blueprint(reservation.reservation_bp)
 
     return app

@@ -6,13 +6,13 @@
 
 {% block content %}
 <section id="welcome" class="full-page-section">
-    <div class="headline-wrapper">
-        <h1 class="headline headline-banner">Our Table</h1>
-        <h4 class="subtitle subtitle-banner">Pohodlně si zarezervujte stůl on-line</h4>
-    </div>
+    <hgroup class="headline-wrapper">
+        <h1 class="headline headline-maxi">Our Table</h1>
+        <h4 class="subtitle subtitle-big">Pohodlně si zarezervujte stůl on-line</h4>
+    </hgroup>
     <section class="actions">
         <button type="button" class="btn-round btn-fill">
-            <a href="">Rezervovat stůl</a>
+            <a href={{ url_for('reservation_bp.reserve')}}>Rezervovat stůl</a>
         </button>
         <button class="btn-round">
             <a href={{ url_for('menu_bp.menu') }}>Prohlédnout menu</a>
