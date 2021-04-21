@@ -1,3 +1,3 @@
-INSERT INTO Jidlo (Cena, Nazev) VALUES ('Svickova',149)
-INSERT INTO Jidlo (Cena, Nazev) VALUES ('Gulas', 129)
-INSERT INTO jidlo (Cena, Nazev) VALUES ('Caesar salat', 99)
+INSERT INTO "Jidlo"("Cena", "Nazev") VALUES (149, 'Svickova');
+INSERT INTO "Jidlo"("Cena", "Nazev") VALUES (129, 'Gulas');
+INSERT INTO "Jidlo"("Cena","Nazev") VALUES (99, 'Caesar');
