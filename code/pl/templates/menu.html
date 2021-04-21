@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}
+- menu
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/menu.scss.css') }}">
+{% endblock %}
+
+{% block content %}
+<section id="menu">
+    <hgroup class="headline-wrapper">
+        <h1 class="headline headline-big">
+            Menu
+        </h1>
+        <h2 class="subtitle subtitle-medium">
+            Vyberte si z naší nabídky jídel
+        </h2>
+    </hgroup>
+    
+    <ol class="menu-list">
+        {% for item in items %}
+            <li class="menu-item">
+                <div class="item-wrapper">
+                    <h3 class="item-name">
+                        {{ item.Nazev }}
+                    </h3>
+                    <span class="item-price">
+                        {{ item.Cena }}
+                        ,-Kč
+                    </span>
+                </div>
+            </li>
+        {% endfor %}
+    </ol>
+</section>
+{% endblock %}
