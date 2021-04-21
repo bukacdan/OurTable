@@ -22,7 +22,8 @@ class ReservationForm(FlaskForm):
 
     time = TimeField(
         'čas',
-        validators=[DataRequired()]
+        validators=[DataRequired()],
+        format='%H:%M'
     )
 
-    submit = SubmitField('Register')
+    submit = SubmitField('Rezervovat')

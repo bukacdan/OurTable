@@ -29,8 +29,9 @@ def create_app(test_config=None):
         pass
 
     with app.app_context():
-        from .controller import home, menu
+        from .controller import home, menu, reservation
         app.register_blueprint(home.home_bp)
         app.register_blueprint(menu.menu_bp)
+        app.register_blueprint(reservation.reservation_bp)
 
     return app

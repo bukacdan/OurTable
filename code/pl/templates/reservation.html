@@ -1,49 +1,65 @@
 {% extends 'base.html' %}
 
+{% block head %}
+<link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/reservation.scss.css') }}>
+{% endblock %}
+
 {% block content %}
-
 <section id="reservation">
-    <h1 class="headline headline-big">
-        Rezervace
-    </h1>
-    <h2 class="subtitle subtitle-medium">
-        zarezervujte si u nás stůl
-    </h2>
+    <hgroup class="headline-wrapper">
+        <h1 class="headline headline-big">
+            Rezervace
+        </h1>
+        <h2 class="subtitle subtitle-medium">
+            zarezervujte si u nás stůl
+        </h2>
+    </hgroup>
     <div class="form-wrapper">
-        <fieldset>
-            {{ form.guests_cnt.label }}
-            {{ form.guests_cnt }}
-            {% if form.guests_cnt.errors %}
+        <form class="reservation-form" action="/reserve" method="POST">
+            <fieldset class="inputset">
+                <label class="input-label">
+                    {{ form.guests_cnt.label }}
+                </label>
+                {{ form.guests_cnt }}
+                {% if form.guests_cnt.errors %}
+                    <ul class="errors">
+                    {% for error in form.guests_cnt.errors %}
+                        <li>{{ error }}</li>{% endfor %}
+                    </ul>
+                {% endif %}
+            </fieldset>
+            <fieldset class="inputset">
+                <label class="input-label">
+                    {{ form.date.label }}
+                </label>
+                {{ form.date }}
+                {% if form.date.errors %}
                 <ul class="errors">
-                {% for error in form.guests_cnt.errors %}
+                {% for error in form.date.errors %}
                     <li>{{ error }}</li>{% endfor %}
                 </ul>
             {% endif %}
-        </fieldset>
-        <fieldset>
-            {{ form.date.label }}
-            {{ form.date }}
-            {% if form.date.errors %}
-            <ul class="errors">
-            {% for error in form.date.errors %}
-                <li>{{ error }}</li>{% endfor %}
-            </ul>
-        {% endif %}
-        </fieldset>
-        <fieldset>
-            {{ form.time.label }}
-            {{ form.time }}
-
-            {% if form.time.errors %}
-                <ul class="errors">
-                {% for error in form.time.errors %}
-                    <li>{{ error }}</li>{% endfor %}
-                </ul>
-            {% endif %}
-        </fieldset>
-
-        {{ form.submit }}
+            </fieldset>
+            <fieldset class="inputset">
+                <label class="input-label">
+                    {{ form.time.label }}
+                </label>
+                {{ form.time }}
+    
+                {% if form.time.errors %}
+                    <ul class="errors">
+                    {% for error in form.time.errors %}
+                        <li>{{ error }}</li>{% endfor %}
+                    </ul>
+                {% endif %}
+            </fieldset>
+    
+            {{ form.submit }}
+        </form>
     </div>
+    {% for data in sent_data %}
+        <p>{{data}}</p>
+    {% endfor %}
 </section>
 
 

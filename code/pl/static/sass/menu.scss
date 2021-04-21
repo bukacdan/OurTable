@@ -50,7 +50,7 @@
     text-align: right;
 }
 
-@media screen and (max-width: 518px) {
+@media screen and (max-width: $viewport_small) {
     #menu .menu-list {
         width: 95%;
     }
