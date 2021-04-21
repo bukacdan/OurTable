@@ -28,3 +28,11 @@ class TableMapper(IMapper):
         session.delete(obj)
         session.commit()
         return True
+
+    @staticmethod
+    def get_all_free(since, count):
+        newsince = since + datetime.timedelta(hours = 2)
+        schedules = session.query(Schedule).filter(datetime.fromisoformat(Schedule.Datumdo) >= newsince, Schedule.Dotumod <= since) 
+
+        tables = Table.join(schedules, Table.StulID  == schedules.StulID)
+        return tables
