@@ -9,8 +9,8 @@ from dl.mapper.schedule import ScheduleMapper
 from dl.mapper.table import TableMapper
 
 from dl.mapper.iaddress import IAddressMapper
-from dl.mapper.ialergen import IAlergen
-from dl.mapper.icustomer import ICustomer
+from dl.mapper.ialergen import IAlergenMapper
+from dl.mapper.icustomer import ICustomerMapper
 from dl.mapper.imeal import IMealMapper
 from dl.mapper.imeal_order import IMealOrderMapper
 from dl.mapper.imenu import IMenuMapper
@@ -25,7 +25,7 @@ def configure(binder):
     binder.bind(IAddressMapper, to=AddressMapper, scope=singleton)
     binder.bind(IAlergenMapper, to=AlergenMapper, scope=singleton)
     binder.bind(ICustomerMapper, to=CustomerMapper, scope=singleton)
-    binder.bind(IMealMapperMapper, to=MealMapper, scope=singleton)
+    binder.bind(IMealMapper, to=MealMapper, scope=singleton)
     binder.bind(IMealOrderMapper, to=MealOrderMapper, scope=singleton)
     binder.bind(IMenuMapper, to=MenuMapper, scope=singleton)
     binder.bind(IReservationMapper, to=ReservationMapper, scope=singleton)
