@@ -33,4 +33,5 @@ class ReservationMapper(IReservationMapper):
         reservation = Reservation (Datumdo = time + datetime.timedelta(hours = 2), Datumod = time)
         reservation.StulID.append(tableID)
         session.add(reservation)
+        session.commit()
         return True
