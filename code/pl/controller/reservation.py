@@ -31,5 +31,5 @@ def select_table():
 def finish():
     dtime = datetime.fromisoformat(request.args['dtime'])
     table_id = request.args['table_id']
-    success = False
+    success = True
     return render_template('reserve_final.html', dtime=dtime, table_id=table_id, success=success)
