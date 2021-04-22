@@ -27,3 +27,10 @@ class ReservationMapper(IReservationMapper):
         session.delete(obj)
         session.commit()
         return True
+
+    @staticmethod
+    def tmp_add (time, tableID):
+        reservation = Reservation (Datumdo = time + datetime.timedelta(hours = 2), Datumod = time)
+        reservation.StulID.append(tableID)
+        session.add(reservation)
+        return True
