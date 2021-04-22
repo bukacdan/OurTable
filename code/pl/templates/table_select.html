@@ -31,7 +31,9 @@
         {% endfor %}
     </div>
     {% if tables is defined and tables | length > 0%}
-    <form class="reservation-form">
+    <form action="" method="POST" class="reservation-form">
+        {{ form.csrf_token }}
+
         <fieldset class="inputset">
             <label class="input-label">
                 {{ form.table_id.label }}

@@ -15,7 +15,8 @@
         </h2>
     </hgroup>
     <div class="form-wrapper">
-        <form class="reservation-form" action={{url_for('reservation_bp.select_table')}} method="POST">
+        <form class="reservation-form" action={{ url_for('reservation_bp.reserve')}} method="post" novalidate>
+            {{ form.csrf_token }}
             <fieldset class="inputset">
                 <label class="input-label">
                     {{ form.guests_cnt.label }}
