@@ -22,6 +22,9 @@ from injector import singleton
 
 
 def configure(binder):
+    """
+    Function to configure flask-injector plugin
+    """
     binder.bind(IAddressMapper, to=AddressMapper, scope=singleton)
     binder.bind(IAlergenMapper, to=AlergenMapper, scope=singleton)
     binder.bind(ICustomerMapper, to=CustomerMapper, scope=singleton)
