@@ -53,7 +53,7 @@ class IMealMapper(IBaseMapper):
 
     def delete(meal: Meal) -> bool:
         """
-        Deletes a meal from the database
+        Deletes a meal from database
 
         Parameters
         ----------
