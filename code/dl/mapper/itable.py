@@ -19,13 +19,13 @@ class ITableMapper(IBaseMapper):
         """
         pass
 
-    def get(table_ID: int) -> Table:
+    def get(table_id: int) -> Table:
         """
         Retrieves a table from database
 
         Parameters
         ----------
-        table_ID: int
+        table_id: int
             ID of the table we want to get
 
         Returns

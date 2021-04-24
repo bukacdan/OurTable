@@ -19,13 +19,13 @@ class IScheduleMapper(IBaseMapper):
         """
         pass
 
-    def get(schedule_ID: int) -> Schedule:
+    def get(schedule_id: int) -> Schedule:
         """
         Retrieves a schedule from database
 
         Parameters
         ----------
-        schedule_ID: int
+        schedule_id: int
             ID of the schedule we want to get
 
         Returns

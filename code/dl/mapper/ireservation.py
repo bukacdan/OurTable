@@ -19,13 +19,13 @@ class IReservationMapper(IBaseMapper):
         """
         pass
 
-    def get(reservation_ID: int) -> Reservation:
+    def get(reservation_id: int) -> Reservation:
         """
         Retrieves a reservation from database
 
         Parameters
         ----------
-        reservation_ID: int
+        reservation_id: int
             ID of the reservation we want to get
 
         Returns

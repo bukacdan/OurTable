@@ -20,13 +20,13 @@ class IBaseMapper(ABC):
         pass
 
     @abstractmethod
-    def get(objID: int) -> object:
+    def get(obj_id: int) -> object:
         """
         Retrieves an object from specific table with the specified ID
 
         Parameters
         ----------
-        objID: int
+        obj_id: int
             ID of object we want to get from database
 
         Returns

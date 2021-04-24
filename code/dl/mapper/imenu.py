@@ -19,13 +19,13 @@ class IMenuMapper(IBaseMapper):
         """
         pass
 
-    def get(menu_ID: int) -> Menu:
+    def get(menu_id: int) -> Menu:
         """
         Retrieves a menu from database
 
         Parameters
         ----------
-        menu_ID: int
+        menu_id: int
             ID of the menu we want to get
 
         Returns

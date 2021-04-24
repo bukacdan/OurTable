@@ -19,13 +19,13 @@ class IAlergenMapper(IBaseMapper):
         """
         pass
 
-    def get(alergen_ID: int) -> Alergen:
+    def get(alergen_id: int) -> Alergen:
         """
         Retrieves an alergen from database with the specified ID
 
         Parameters
         ----------
-        alergen_ID: int
+        alergen_id: int
             ID of the alergen to retrieve
 
         Returns

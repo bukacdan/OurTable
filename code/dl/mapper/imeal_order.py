@@ -19,13 +19,13 @@ class IMealOrderMapper(IBaseMapper):
         """
         pass
 
-    def get(meal_order_ID: int) -> MealOrder:
+    def get(meal_order_id: int) -> MealOrder:
         """
         Retrieves a meal order from database
 
         Parameters
         ----------
-        meal_order_ID: int
+        meal_order_id: int
             ID of the meal order we want to get
 
         Returns
