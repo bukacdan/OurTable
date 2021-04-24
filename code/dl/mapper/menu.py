@@ -11,8 +11,8 @@ class MenuMapper(IMenuMapper):
         menus = session.query(Menu).all()
         return menus
 
-    def get(self, objID):
-        return session.query(Menu).filter(Menu.MenuID == objID).first()
+    def get(self, obj_id):
+        return session.query(Menu).filter(Menu.MenuID == obj_id).first()
 
     def add(self, obj):
         if self.get(obj.MenuID):

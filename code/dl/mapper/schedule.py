@@ -11,8 +11,8 @@ class ScheduleMapper(IScheduleMapper):
         schedules = session.query(Schedule).all()
         return schedules
 
-    def get(self, objID):
-        return session.query(Schedule).filter(Schedule.RozvrhID == objID).first()
+    def get(self, obj_id):
+        return session.query(Schedule).filter(Schedule.RozvrhID == obj_id).first()
 
     def add(self, obj):
         if self.get(obj.RozvrhID):

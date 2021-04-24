@@ -11,8 +11,8 @@ class MealOrderMapper(IMealOrderMapper):
         mealorders = session.query(MealOrder).all()
         return mealorders
 
-    def get(self, objID):
-        return session.query(MealOrder).filter(MealOrder.Objednavka_jidlaID == objID).first()
+    def get(self, obj_id):
+        return session.query(MealOrder).filter(MealOrder.Objednavka_jidlaID == obj_id).first()
 
     def add(self, obj):
         if self.get(obj.Objednavka_jidlaID):

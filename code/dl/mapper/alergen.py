@@ -11,8 +11,8 @@ class AlergenMapper(IAlergenMapper):
         alergens = session.query(Alergen).all()
         return alergens
 
-    def get(self, objID):
-        return session.query(Alergen).filter(Alergen.Cislo == objID).first()
+    def get(self, obj_id):
+        return session.query(Alergen).filter(Alergen.Cislo == obj_id).first()
 
     def add(self, obj):
         if self.get(obj.Cislo):

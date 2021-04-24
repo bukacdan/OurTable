@@ -11,8 +11,8 @@ class AddressMapper(IAddressMapper):
         addresses = session.query(Address).all()
         return addresses
 
-    def get(self, objID):
-        return session.query(Address).filter(Address.AdresaID == objID).first()
+    def get(self, obj_id):
+        return session.query(Address).filter(Address.AdresaID == obj_id).first()
 
     def add(self, obj):
         if self.get(obj.AdresaID):

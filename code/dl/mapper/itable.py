@@ -1,6 +1,7 @@
 from typing import List
 from dl.entity.table import Table
 from .ibase import IBaseMapper
+from abc import abstractmethod
 
 
 class ITableMapper(IBaseMapper):

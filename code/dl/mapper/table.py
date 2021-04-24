@@ -13,8 +13,8 @@ class TableMapper(ITableMapper):
         tables = session.query(Table).all()
         return tables
 
-    def get(self, objID):
-        return session.query(Table).filter(Table.StulID == objID).first()
+    def get(self, obj_id):
+        return session.query(Table).filter(Table.StulID == obj_id).first()
 
     def add(self, obj):
         if self.get(obj.StulID):

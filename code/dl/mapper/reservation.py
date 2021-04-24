@@ -11,8 +11,8 @@ class ReservationMapper(IReservationMapper):
         reservations = session.query(Reservation).all()
         return reservations
 
-    def get(self, objID):
-        return session.query(Reservation).filter(Reservation.RezervaceID == objID).first()
+    def get(self, obj_id):
+        return session.query(Reservation).filter(Reservation.RezervaceID == obj_id).first()
 
     def add(self, obj):
         if self.get(obj.RezervaceID):

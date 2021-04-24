@@ -11,8 +11,8 @@ class MealMapper(IMealMapper):
         meals = session.query(Meal).all()
         return meals
 
-    def get(self, objID):
-        return session.query(Meal).filter(Meal.JidloID == objID).first()
+    def get(self, obj_id):
+        return session.query(Meal).filter(Meal.JidloID == obj_id).first()
 
     def add(self, obj):
         if self.get(obj.JidloID):

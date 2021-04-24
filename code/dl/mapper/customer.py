@@ -11,8 +11,8 @@ class CustomerMapper(ICustomerMapper):
         customers = session.query(Customer).all()
         return customers
 
-    def get(self, objID):
-        return session.query(Customer).filter(Customer.UzivatelID == objID).first()
+    def get(self, obj_id):
+        return session.query(Customer).filter(Customer.UzivatelID == obj_id).first()
 
     def add(self, obj):
         if self.get(obj.UzivatelID):
