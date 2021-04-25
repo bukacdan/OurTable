@@ -31,5 +31,7 @@ class TableService:
         """
         newsince = since + timedelta(hours=2)
         schedules = schedule_mapper.filter_on_date(since, newsince, True)
+        if not schedules:
+            return []
         tables = table_mapper.get_with(count, schedules)
         return tables
