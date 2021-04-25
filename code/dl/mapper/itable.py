@@ -1,7 +1,9 @@
-from typing import List
+from typing import List, Any
 from dl.entity.table import Table
 from .ibase import IBaseMapper
 from abc import abstractmethod
+
+from dl.entity.schedule import Schedule 
 
 
 class ITableMapper(IBaseMapper):
@@ -73,7 +75,7 @@ class ITableMapper(IBaseMapper):
         pass
 
     @abstractmethod
-    def get_with(self, seats: int,schedules: List[Schedule]) -> List[any]:
+    def get_with(self, seats: int,schedules: List[Schedule]) -> List[Any]:
         """
         Joins all tables with schedules
 

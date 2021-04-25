@@ -3,6 +3,8 @@ from abc import abstractmethod
 from dl.entity.schedule import Schedule
 from .ibase import IBaseMapper
 
+from datetime import datetime
+
 
 class IScheduleMapper(IBaseMapper):
     """
@@ -73,7 +75,7 @@ class IScheduleMapper(IBaseMapper):
         pass
 
     @abstractmethod
-    def filter_on_date(self, since: datetime, until: datetime, availability: boolean) -> List[Schedule]:
+    def filter_on_date(self, since: datetime, until: datetime, availability: bool) -> List[Schedule]:
         """
         Filters based on time interval and availability
 

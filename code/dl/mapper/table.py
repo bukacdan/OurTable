@@ -32,6 +32,6 @@ class TableMapper(ITableMapper):
 
     def get_with(self, seats, schedules):
         tables = session.query(Table).join(
-            schedules, schedule.StulID == Table.StulID
+            schedules, Schedule.StulID == Table.StulID
         ).filter(Table.Pocetmist >= seats).all()
         return tables
