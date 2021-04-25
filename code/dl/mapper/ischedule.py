@@ -1,4 +1,5 @@
 from typing import List
+from abc import abstractmethod
 from dl.entity.schedule import Schedule
 from .ibase import IBaseMapper
 
@@ -8,7 +9,8 @@ class IScheduleMapper(IBaseMapper):
     Interface for ScheduleMapper
     """
 
-    def get_all() -> List[Schedule]:
+    @abstractmethod
+    def get_all(self) -> List[Schedule]:
         """
         Retrieves all schedules from database
 
@@ -19,7 +21,8 @@ class IScheduleMapper(IBaseMapper):
         """
         pass
 
-    def get(schedule_id: int) -> Schedule:
+    @abstractmethod
+    def get(self, schedule_id: int) -> Schedule:
         """
         Retrieves a schedule from database
 
@@ -35,7 +38,8 @@ class IScheduleMapper(IBaseMapper):
         """
         pass
 
-    def add(schedule: Schedule) -> bool:
+    @abstractmethod
+    def add(self, schedule: Schedule) -> bool:
         """
         Adds a schedule to database
 
@@ -51,7 +55,8 @@ class IScheduleMapper(IBaseMapper):
         """
         pass
 
-    def delete(schedule: Schedule) -> bool:
+    @abstractmethod
+    def delete(self, schedule: Schedule) -> bool:
         """
         Deletes a schedule from database
 
@@ -66,4 +71,3 @@ class IScheduleMapper(IBaseMapper):
             True on success, False when schedule is not in database
         """
         pass
-

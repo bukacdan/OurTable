@@ -9,7 +9,8 @@ class ITableMapper(IBaseMapper):
     Interface for TableMapper
     """
 
-    def get_all() -> List[Table]:
+    @abstractmethod
+    def get_all(self) -> List[Table]:
         """
         Retrieves all tables from database
 
@@ -20,7 +21,8 @@ class ITableMapper(IBaseMapper):
         """
         pass
 
-    def get(table_id: int) -> Table:
+    @abstractmethod
+    def get(self, table_id: int) -> Table:
         """
         Retrieves a table from database
 
@@ -36,7 +38,8 @@ class ITableMapper(IBaseMapper):
         """
         pass
 
-    def add(table: Table) -> bool:
+    @abstractmethod
+    def add(self, table: Table) -> bool:
         """
         Adds a table to database
 
@@ -52,7 +55,8 @@ class ITableMapper(IBaseMapper):
         """
         pass
 
-    def delete(table: Table) -> bool:
+    @abstractmethod
+    def delete(self, table: Table) -> bool:
         """
         Deletes a table from database
 
@@ -67,4 +71,3 @@ class ITableMapper(IBaseMapper):
             True on success, False when table is not in database
         """
         pass
-
