@@ -73,22 +73,3 @@ class IScheduleMapper(IBaseMapper):
             True on success, False when schedule is not in database
         """
         pass
-
-    @abstractmethod
-    def filter_on_date(self, since: datetime, until: datetime, availability: bool) -> List[Schedule]:
-        """
-        Filters based on time interval and availability
-
-        Parameters
-        ----------
-        since: datetime
-            bottom interval boundary
-        until: datetime
-            upper interval boundary
-        availability: boolean
-            tables availability
-
-        Returns
-        ---------
-        List of tables fulfiling criteriea;
-        """
