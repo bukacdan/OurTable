@@ -11,17 +11,17 @@ class AlergenMapper(IAlergenMapper):
         alergens = DBEngine.get_session().query(Alergen).all()
         return alergens
 
-    def get(self, obj_id):
+    def get(self, obj_id: int):
         return DBEngine.get_session().query(Alergen).filter(Alergen.Cislo == obj_id).first()
 
-    def add(self, obj):
+    def add(self, obj: Alergen):
         if self.get(obj.Cislo):
             return False
         DBEngine.get_session().add(obj)
         DBEngine.get_session().commit()
         return True
 
-    def delete(self, obj):
+    def delete(self, obj: Alergen):
         if not self.get(obj.Cislo):
             return False
         DBEngine.get_session().delete(obj)

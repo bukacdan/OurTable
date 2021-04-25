@@ -14,17 +14,17 @@ class TableMapper(ITableMapper):
         tables = DBEngine.get_session().query(Table).all()
         return tables
 
-    def get(self, obj_id):
+    def get(self, obj_id: int):
         return DBEngine.get_session().query(Table).filter(Table.StulID == obj_id).first()
 
-    def add(self, obj):
+    def add(self, obj: Table):
         if self.get(obj.StulID):
             return False
         DBEngine.get_session().add(obj)
         DBEngine.get_session().commit()
         return True
 
-    def delete(self, obj):
+    def delete(self, obj: Table):
         if not self.get(obj.StulID):
             return False
         DBEngine.get_session().delete(obj)

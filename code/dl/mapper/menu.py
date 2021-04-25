@@ -11,17 +11,17 @@ class MenuMapper(IMenuMapper):
         menus = DBEngine.get_session().query(Menu).all()
         return menus
 
-    def get(self, obj_id):
+    def get(self, obj_id: int):
         return DBEngine.get_session().query(Menu).filter(Menu.MenuID == obj_id).first()
 
-    def add(self, obj):
+    def add(self, obj: Menu):
         if self.get(obj.MenuID):
             return False
         DBEngine.get_session().add(obj)
         DBEngine.get_session().commit()
         return True
 
-    def delete(self, obj):
+    def delete(self, obj: Menu):
         if not self.get(obj.MenuID):
             return False
         DBEngine.get_session().delete(obj)

@@ -11,17 +11,17 @@ class AddressMapper(IAddressMapper):
         addresses = DBEngine.get_session().query(Address).all()
         return addresses
 
-    def get(self, obj_id):
+    def get(self, obj_id: int):
         return DBEngine.get_session().query(Address).filter(Address.AdresaID == obj_id).first()
 
-    def add(self, obj):
+    def add(self, obj: Address):
         if self.get(obj.AdresaID):
             return False
         DBEngine.get_session().add(obj)
         DBEngine.get_session().commit()
         return True
 
-    def delete(self, obj):
+    def delete(self, obj: Address):
         if not self.get(obj.AdresaID):
             return False
         DBEngine.get_session().delete(obj)
