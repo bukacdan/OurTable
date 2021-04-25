@@ -1,4 +1,5 @@
-from .base import Base
+from .db_engine import DBEngine
 
 
-Table = Base.classes.Stul
+# This is not a global parameter, but an automatically created class
+Table = DBEngine.get_base().classes.Stul

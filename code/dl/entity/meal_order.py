@@ -1,4 +1,5 @@
-from .base import Base
+from .db_engine import DBEngine
 
 
-MealOrder = Base.classes.Objednavka_jidla
+# This is not a global parameter, but an automatically created class
+MealOrder = DBEngine.get_base().classes.Objednavka_jidla

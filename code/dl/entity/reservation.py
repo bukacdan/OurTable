@@ -1,4 +1,5 @@
-from .base import Base
+from .db_engine import DBEngine
 
 
-Reservation = Base.classes.Rezervace
+# This is not a global parameter, but an automatically created class
+Reservation = DBEngine.get_base().classes.Rezervace

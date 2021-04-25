@@ -1,4 +1,5 @@
-from .base import Base
+from .db_engine import DBEngine
 
 
-Customer = Base.classes.Uzivatel
+# This is not a global parameter, but an automatically created class
+Customer = DBEngine.get_base().classes.Uzivatel

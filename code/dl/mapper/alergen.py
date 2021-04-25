@@ -1,4 +1,4 @@
-from dl.entity.base import session
+from dl.entity.db_engine import DBEngine
 from dl.entity.alergen import Alergen
 from dl.mapper.ialergen import IAlergenMapper
 
@@ -8,22 +8,22 @@ class AlergenMapper(IAlergenMapper):
         pass
 
     def get_all(self):
-        alergens = session.query(Alergen).all()
+        alergens = DBEngine.get_session().query(Alergen).all()
         return alergens
 
     def get(self, obj_id):
-        return session.query(Alergen).filter(Alergen.Cislo == obj_id).first()
+        return DBEngine.get_session().query(Alergen).filter(Alergen.Cislo == obj_id).first()
 
     def add(self, obj):
         if self.get(obj.Cislo):
             return False
-        session.add(obj)
-        session.commit()
+        DBEngine.get_session().add(obj)
+        DBEngine.get_session().commit()
         return True
 
     def delete(self, obj):
         if not self.get(obj.Cislo):
             return False
-        session.delete(obj)
-        session.commit()
+        DBEngine.get_session().delete(obj)
+        DBEngine.get_session().commit()
         return True

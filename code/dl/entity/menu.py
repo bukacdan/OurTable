@@ -1,4 +1,5 @@
-from .base import Base
+from .db_engine import DBEngine
 
 
-Menu = Base.classes.Menu
+# This is not a global parameter, but an automatically created class
+Menu = DBEngine.get_base().classes.Menu
