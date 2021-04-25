@@ -27,10 +27,3 @@ class ScheduleMapper(IScheduleMapper):
         DBEngine.get_session().delete(obj)
         DBEngine.get_session().commit()
         return True
-
-    def filter_on_date(self, since, until, availability):
-        schedules = DBEngine.get_session().query(Schedule).filter(
-            Schedule.Datumod == since,
-            Schedule.Datumdo == until,
-            Schedule.Jedostupny == availability).all()
-        return schedules

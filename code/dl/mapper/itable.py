@@ -2,8 +2,9 @@ from typing import List, Any
 from dl.entity.table import Table
 from .ibase import IBaseMapper
 from abc import abstractmethod
+from datetime import datetime
 
-from dl.entity.schedule import Schedule 
+from dl.entity.schedule import Schedule
 
 
 class ITableMapper(IBaseMapper):
@@ -75,20 +76,21 @@ class ITableMapper(IBaseMapper):
         pass
 
     @abstractmethod
-    def get_with(self, seats: int,schedules: List[Schedule]) -> List[Any]:
+    def get_free_tables(self, seats: int, since: datetime, until: datetime):
         """
-        Joins all tables with schedules
+        Get free table for a given interval
 
         Parameters
         ----------
         seats: int
             minimal number of seats
-        schedules: List[Schedule]
-            Schedules to join with
+        since: datetime
+            date from
+        until: datetime
+            date to
 
         Returns
         ---------
-        List of joined tables with schedules
+        Table satisfying given parameters
         """
         pass
-
