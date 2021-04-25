@@ -58,7 +58,7 @@ class ReservationController:
 
     @staticmethod
     @reservation_bp.route('finish', methods=['GET', 'POST'])
-    def finish(reservation_service_mapper:ReservationService, reservation_mapper:IReservationMapper) -> str:
+    def finish(reservation_service_mapper:ReservationService, reservation_mapper:IReservationMapper, table_mapper:ITableMapper) -> str:
         """
         routes to /reserve/finish
 
@@ -66,5 +66,5 @@ class ReservationController:
         """
         dtime = datetime.fromisoformat(request.args['dtime'])
         table_id = request.args['table_id']
-        success = reservation_service_mapper.add_reservation(dtime, table_id, reservation_mapper)
+        success = reservation_service_mapper.add_reservation(dtime, table_id, reservation_mapper, table_mapper)
         return render_template('reserve_final.html', dtime=dtime, table_id=table_id, success=success)

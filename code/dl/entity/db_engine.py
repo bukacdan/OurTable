@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, configure_mappers
 from sqlalchemy.ext.automap import automap_base
 
 
@@ -61,3 +61,4 @@ class DBEngine():
         '''Initialize database base object'''
         cls.base = automap_base(bind=cls.engine)
         cls.base.prepare(cls.engine, reflect=True)
+        configure_mappers()
