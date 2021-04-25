@@ -42,6 +42,7 @@ class DBEngine():
         cls.__init_engine()
         cls.__init_session()
         cls.__init_base()
+        cls.valid = True
 
     @classmethod
     def __init_engine(cls):
