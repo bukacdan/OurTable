@@ -5,10 +5,15 @@ from typing import List
 class IBaseMapper(ABC):
     """
     Base interface for all data mappers
+
+    You will see parameter 'obj' that is not typed.
+    The type of object is dependent on the child class.
+    This interface should not be used, as it only serves
+    as a common ancestor for other interfaces.
     """
 
     @abstractmethod
-    def get_all() -> List[object]:
+    def get_all(self) -> List[object]:
         """
         Retrieves all objects from specific table
 
@@ -20,7 +25,7 @@ class IBaseMapper(ABC):
         pass
 
     @abstractmethod
-    def get(obj_id: int) -> object:
+    def get(self, obj_id: int) -> object:
         """
         Retrieves an object from specific table with the specified ID
 
@@ -37,7 +42,7 @@ class IBaseMapper(ABC):
         pass
 
     @abstractmethod
-    def add(obj) -> bool:
+    def add(self, obj) -> bool:
         """
         Add an object to the database
 
@@ -54,7 +59,7 @@ class IBaseMapper(ABC):
         pass
 
     @abstractmethod
-    def delete(obj) -> bool:
+    def delete(self, obj) -> bool:
         """
         Deletes an object from the database
 

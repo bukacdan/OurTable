@@ -1,4 +1,5 @@
 from typing import List
+from abc import abstractmethod
 from dl.entity.reservation import Reservation
 from .ibase import IBaseMapper
 
@@ -8,7 +9,8 @@ class IReservationMapper(IBaseMapper):
     Interface for ReservationMapper
     """
 
-    def get_all() -> List[Reservation]:
+    @abstractmethod
+    def get_all(self) -> List[Reservation]:
         """
         Retrieves all reservations from database
 
@@ -19,7 +21,8 @@ class IReservationMapper(IBaseMapper):
         """
         pass
 
-    def get(reservation_id: int) -> Reservation:
+    @abstractmethod
+    def get(self, reservation_id: int) -> Reservation:
         """
         Retrieves a reservation from database
 
@@ -35,7 +38,8 @@ class IReservationMapper(IBaseMapper):
         """
         pass
 
-    def add(reservation: Reservation) -> bool:
+    @abstractmethod
+    def add(self, reservation: Reservation) -> bool:
         """
         Adds a reservation to database
 
@@ -51,7 +55,8 @@ class IReservationMapper(IBaseMapper):
         """
         pass
 
-    def delete(reservation: Reservation) -> bool:
+    @abstractmethod
+    def delete(self, reservation: Reservation) -> bool:
         """
         Deletes a reservation from database
 
@@ -66,4 +71,3 @@ class IReservationMapper(IBaseMapper):
             True on success, False when reservation is not in database
         """
         pass
-

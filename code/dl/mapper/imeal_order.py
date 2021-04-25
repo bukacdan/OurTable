@@ -1,6 +1,7 @@
 from typing import List
 from .ibase import IBaseMapper
 from dl.entity.meal_order import MealOrder
+from abc import abstractmethod
 
 
 class IMealOrderMapper(IBaseMapper):
@@ -8,7 +9,8 @@ class IMealOrderMapper(IBaseMapper):
     Interface for MealOrderMapper
     """
 
-    def get_all() -> List[MealOrder]:
+    @abstractmethod
+    def get_all(self) -> List[MealOrder]:
         """
         Retrieves all meal orders from database
 
@@ -19,7 +21,8 @@ class IMealOrderMapper(IBaseMapper):
         """
         pass
 
-    def get(meal_order_id: int) -> MealOrder:
+    @abstractmethod
+    def get(self, meal_order_id: int) -> MealOrder:
         """
         Retrieves a meal order from database
 
@@ -35,7 +38,8 @@ class IMealOrderMapper(IBaseMapper):
         """
         pass
 
-    def add(meal_order: MealOrder) -> bool:
+    @abstractmethod
+    def add(self, meal_order: MealOrder) -> bool:
         """
         Adds a meal order to database
 
@@ -51,7 +55,8 @@ class IMealOrderMapper(IBaseMapper):
         """
         pass
 
-    def delete(meal_order: MealOrder) -> bool:
+    @abstractmethod
+    def delete(self, meal_order: MealOrder) -> bool:
         """
         Deletes a meal order from database
 

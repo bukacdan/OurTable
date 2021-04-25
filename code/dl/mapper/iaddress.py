@@ -1,6 +1,7 @@
 from typing import List
 from dl.entity.address import Address
 from .ibase import IBaseMapper
+from abc import abstractmethod
 
 
 class IAddressMapper(IBaseMapper):
@@ -8,7 +9,8 @@ class IAddressMapper(IBaseMapper):
     Interface for AddressMapper
     """
 
-    def get_all() -> List[Address]:
+    @abstractmethod
+    def get_all(self) -> List[Address]:
         """
         Retrieves all addresses from database
 
@@ -19,7 +21,8 @@ class IAddressMapper(IBaseMapper):
         """
         pass
 
-    def get(address_ID: int) -> Address:
+    @abstractmethod
+    def get(self, address_ID: int) -> Address:
         """
         Retrieves an address from database
 
@@ -35,7 +38,8 @@ class IAddressMapper(IBaseMapper):
         """
         pass
 
-    def add(address: Address) -> bool:
+    @abstractmethod
+    def add(self, address: Address) -> bool:
         """
         Adds an address to database
 
@@ -51,7 +55,8 @@ class IAddressMapper(IBaseMapper):
         """
         pass
 
-    def delete(address: Address) -> bool:
+    @abstractmethod
+    def delete(self, address: Address) -> bool:
         """
         Deletes an address from database
 

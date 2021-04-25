@@ -1,6 +1,7 @@
 from typing import List
 from dl.entity.alergen import Alergen
 from .ibase import IBaseMapper
+from abc import abstractmethod
 
 
 class IAlergenMapper(IBaseMapper):
@@ -8,7 +9,8 @@ class IAlergenMapper(IBaseMapper):
     Interface for AlergenMapper
     """
 
-    def get_all() -> List[object]:
+    @abstractmethod
+    def get_all(self) -> List[object]:
         """
         Retrieves all alergens from database
 
@@ -19,7 +21,8 @@ class IAlergenMapper(IBaseMapper):
         """
         pass
 
-    def get(alergen_id: int) -> Alergen:
+    @abstractmethod
+    def get(self, alergen_id: int) -> Alergen:
         """
         Retrieves an alergen from database with the specified ID
 
@@ -35,7 +38,8 @@ class IAlergenMapper(IBaseMapper):
         """
         pass
 
-    def add(alergen: Alergen) -> bool:
+    @abstractmethod
+    def add(self, alergen: Alergen) -> bool:
         """
         Adds an alergen to database
 
@@ -51,7 +55,8 @@ class IAlergenMapper(IBaseMapper):
         """
         pass
 
-    def delete(alergen) -> bool:
+    @abstractmethod
+    def delete(self, alergen) -> bool:
         """
         Deletes an alergen from database
 

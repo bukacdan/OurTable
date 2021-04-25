@@ -1,6 +1,7 @@
 from typing import List
 from dl.entity.customer import Customer
 from .ibase import IBaseMapper
+from abc import abstractmethod
 
 
 class ICustomerMapper(IBaseMapper):
@@ -8,7 +9,8 @@ class ICustomerMapper(IBaseMapper):
     Interface for customer mapper
     """
 
-    def get_all() -> List[Customer]:
+    @abstractmethod
+    def get_all(self) -> List[Customer]:
         """
         Retrieves all customers from database
 
@@ -19,7 +21,8 @@ class ICustomerMapper(IBaseMapper):
         """
         pass
 
-    def get(customer_id: int) -> Customer:
+    @abstractmethod
+    def get(self, customer_id: int) -> Customer:
         """
         Retrieves a customer from database with the specified ID
 
@@ -35,7 +38,8 @@ class ICustomerMapper(IBaseMapper):
         """
         pass
 
-    def add(customer: Customer) -> bool:
+    @abstractmethod
+    def add(self, customer: Customer) -> bool:
         """
         Adds a customer to database
 
@@ -51,7 +55,8 @@ class ICustomerMapper(IBaseMapper):
         """
         pass
 
-    def delete(customer: Customer) -> bool:
+    @abstractmethod
+    def delete(self, customer: Customer) -> bool:
         """
         Deletes a customer from database
 

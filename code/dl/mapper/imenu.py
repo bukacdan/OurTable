@@ -1,6 +1,7 @@
 from typing import List
 from dl.entity.menu import Menu
 from .ibase import IBaseMapper
+from abc import abstractmethod
 
 
 class IMenuMapper(IBaseMapper):
@@ -8,7 +9,8 @@ class IMenuMapper(IBaseMapper):
     Interface for MenuMapper
     """
 
-    def get_all() -> List[Menu]:
+    @abstractmethod
+    def get_all(self) -> List[Menu]:
         """
         Retrieves all menus from database
 
@@ -19,7 +21,8 @@ class IMenuMapper(IBaseMapper):
         """
         pass
 
-    def get(menu_id: int) -> Menu:
+    @abstractmethod
+    def get(self, menu_id: int) -> Menu:
         """
         Retrieves a menu from database
 
@@ -35,7 +38,8 @@ class IMenuMapper(IBaseMapper):
         """
         pass
 
-    def add(menu: Menu) -> bool:
+    @abstractmethod
+    def add(self, menu: Menu) -> bool:
         """
         Adds a menu to database
 
@@ -51,7 +55,8 @@ class IMenuMapper(IBaseMapper):
         """
         pass
 
-    def delete(menu: Menu) -> bool:
+    @abstractmethod
+    def delete(self, menu: Menu) -> bool:
         """
         Deletes a menu from database
 
@@ -66,4 +71,3 @@ class IMenuMapper(IBaseMapper):
             True on success, False when menu is not in database
         """
         pass
-
