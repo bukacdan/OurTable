@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="utf-8">
+		<title>
+			OurTable {% block title %}{% endblock %}
+		</title>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='img/icon.svg') }}" />
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.scss.css') }}">
+		{% block head %}
+		{% endblock %}
+	</head>
+	<body>
+		<header class="header-global">
+			<section class="logo-wrapper">
+				<button class="btn-home" type="button">
+					<a href={{ url_for('home_bp.home') }}>
+						<img alt="logo" class="logo" src={{ url_for('static', filename='img/icon.svg') }}>
+						<span class="logo-text">Our Table</span>
+					</a>
+				</button>
+			</section>
+		</header>
+		{% block content %}
+		{% endblock %}
+
+		{% block scripts %}
+		{% endblock %}
+		
+		<script>
+			const btns = document.querySelectorAll('.btn-round')
+		
+			btns.forEach((btn) => {
+				btn.addEventListener('mouseenter', (e) => {
+					btn.classList.add('btn-fill');
+				})
+			})
+		
+			btns.forEach((btn) => {
+				btn.addEventListener('mouseleave', () => {
+					btn.classList.remove('btn-fill');
+				})
+			})
+		</script>
+	</body>
+</html>

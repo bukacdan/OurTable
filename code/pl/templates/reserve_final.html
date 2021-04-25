@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if success %}
+<section class="full-page-section">
+    <h2 class="headline headline-big">
+        Děkujeme za rezervaci
+    </h2>
+    <p>vaše rezervace na {{dtime}} ke stolu číslo {{ table_id }} byla úspěšně vytvořena</p>
+</section>
+{% else %}
+<section class="full-page-section">
+    <h2 class="headline-big">
+        Omlouváme se, něco se pokazilo
+    </h2>
+    <button class="btn-round">
+        <a href={{ url_for('reservation_bp.reserve')}}>Zkusit znovu</a>
+    </button>
+</section>
+{% endif %}
+{% endblock %}
