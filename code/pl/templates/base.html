@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="cs">
 	<head>
-		{% block head %}
 		<meta charset="utf-8">
 		<title>
 			OurTable {% block title %}{% endblock %}
@@ -11,6 +10,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='img/icon.svg') }}" />
 		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.scss.css') }}">
+		{% block head %}
 		{% endblock %}
 	</head>
 	<body>
