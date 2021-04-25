@@ -20,21 +20,3 @@
     </section>
 </section>
 {% endblock %}
-
-{% block scripts %}
-<script>
-    const btns = document.querySelectorAll('.btn-round')
-
-    btns.forEach((btn) => {
-        btn.addEventListener('mouseenter', (e) => {
-            btn.classList.add('btn-fill');
-        })
-    })
-
-    btns.forEach((btn) => {
-        btn.addEventListener('mouseleave', () => {
-            btn.classList.remove('btn-fill');
-        })
-    })
-</script>
-{% endblock %}
