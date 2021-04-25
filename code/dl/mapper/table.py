@@ -30,4 +30,8 @@ class TableMapper(ITableMapper):
         session.commit()
         return True
 
-    
+    def get_with(self, seats, schedules):
+        tables = session.query(Table).join(
+            schedules, schedule.StulID == Table.StulID
+        ).filter(Table.Pocetmist >= seats).all()
+        return tables

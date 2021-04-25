@@ -71,3 +71,22 @@ class ITableMapper(IBaseMapper):
             True on success, False when table is not in database
         """
         pass
+
+    @abstractmethod
+    def get_with(self, seats: int,schedules: List[Schedule]) -> List[any]:
+        """
+        Joins all tables with schedules
+
+        Parameters
+        ----------
+        seats: int
+            minimal number of seats
+        schedules: List[Schedule]
+            Schedules to join with
+
+        Returns
+        ---------
+        List of joined tables with schedules
+        """
+        pass
+
