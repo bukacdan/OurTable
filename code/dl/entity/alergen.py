@@ -1,4 +1,5 @@
-from .base import Base
+from .db_engine import DBEngine
 
 
-Alergen = Base.classes.Alergen
+# This is not a global parameter, but an automatically created class
+Alergen = DBEngine.get_base().classes.Alergen

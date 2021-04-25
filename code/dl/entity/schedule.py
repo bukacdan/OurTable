@@ -1,4 +1,5 @@
-from .base import Base
+from .db_engine import DBEngine
 
 
-Schedule = Base.classes.Rozvrh
+# This is not a global parameter, but an automatically created class
+Schedule = DBEngine.get_base().classes.Rozvrh

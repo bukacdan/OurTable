@@ -1,4 +1,4 @@
-from dl.entity.base import session
+from dl.entity.db_engine import DBEngine
 from dl.entity.address import Address
 from dl.mapper.iaddress import IAddressMapper
 
@@ -8,22 +8,22 @@ class AddressMapper(IAddressMapper):
         pass
 
     def get_all(self):
-        addresses = session.query(Address).all()
+        addresses = DBEngine.get_session().query(Address).all()
         return addresses
 
     def get(self, obj_id):
-        return session.query(Address).filter(Address.AdresaID == obj_id).first()
+        return DBEngine.get_session().query(Address).filter(Address.AdresaID == obj_id).first()
 
     def add(self, obj):
         if self.get(obj.AdresaID):
             return False
-        session.add(obj)
-        session.commit()
+        DBEngine.get_session().add(obj)
+        DBEngine.get_session().commit()
         return True
 
     def delete(self, obj):
         if not self.get(obj.AdresaID):
             return False
-        session.delete(obj)
-        session.commit()
+        DBEngine.get_session().delete(obj)
+        DBEngine.get_session().commit()
         return True

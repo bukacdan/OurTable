@@ -1,4 +1,4 @@
-from dl.entity.base import session
+from dl.entity.db_engine import DBEngine
 from dl.entity.schedule import Schedule
 from dl.mapper.ischedule import IScheduleMapper
 
@@ -8,24 +8,24 @@ class ScheduleMapper(IScheduleMapper):
         pass
 
     def get_all(self):
-        schedules = session.query(Schedule).all()
+        schedules = DBEngine.get_session().query(Schedule).all()
         return schedules
 
     def get(self, obj_id):
-        return session.query(Schedule).filter(Schedule.RozvrhID == obj_id).first()
+        return DBEngine.get_session().query(Schedule).filter(Schedule.RozvrhID == obj_id).first()
 
     def add(self, obj):
         if self.get(obj.RozvrhID):
             return False
-        session.add(obj)
-        session.commit()
+        DBEngine.get_session().add(obj)
+        DBEngine.get_session().commit()
         return True
 
     def delete(self, obj):
         if not self.get(obj.RozvrhID):
             return False
-        session.delete(obj)
-        session.commit()
+        DBEngine.get_session().delete(obj)
+        DBEngine.get_session().commit()
         return True
 
     def filter_on_date(self, since, until, availability):
