@@ -1,8 +1,6 @@
 @import 'index.scss';
 
-#reservation .reservation-form {
-    width: 60%;
-    margin: auto;
+.reservation-form {
     text-align: center;
 }
 
@@ -30,8 +28,31 @@ form input[type=submit]:hover {
     text-decoration: underline;
 }
 
+#table-select .select-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#table-select .item-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+#table-select .item-wrapper .item-icon {
+    width: 20vw;
+    height: auto;
+}
+
 @media all and (max-width: $viewport_small) {
-    #reservation .reservation-form {
+    .reservation-form {
         width: 100% ;
     }
 }

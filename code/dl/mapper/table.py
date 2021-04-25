@@ -27,3 +27,9 @@ class TableMapper(ITableMapper):
         DBEngine.get_session().delete(obj)
         DBEngine.get_session().commit()
         return True
+
+    def get_with(self, seats, schedules):
+        tables = DBEngine.get_session().query(Table).join(
+            schedules, schedule.StulID == Table.StulID
+        ).filter(Table.Pocetmist >= seats).all()
+        return tables

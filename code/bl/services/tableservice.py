@@ -1,15 +1,29 @@
 import datetime
-from dl.mapper.table import TableMapper
-from dl.mapper.schedule import ScheduleMapper
+from dl.mapper.itable import ITableMapper
+from dl.mapper.ischedule import IScheduleMapper
 
 class TableService:
-    @staticmethod
-    def get_free_tables(self, since, count):
-        allTables = TableMapper.get_all()
-        allSchedules = ScheduleMapper.get_all()
-        newsince = since + datetime.timedelta(hours = 2)
+    """
+    Manages table methods
+    """
 
-        schedules = allSchedules.filter(datetime.fromisoformat(Schedule.Datumdo) >= newsince, Schedule.Dotumod <= since)
-        tables = allTables.join(schedules, allTables.StulID  == schedules.StulID)
-    
+    def get_free_tables(self, since: datetime, count: int, tableMapper: ITableMapper, scheduleMapper: IScheduleMapper) -> List[Table]:
+        """
+        Retrieves all free tables in specified time + 2 hours from database
+
+        Parameters
+        ----------
+        since: datetime
+            datetime to filter tables based on their availability
+        count: int
+            minimal size of tables to retrieve
+
+        Returns
+        ----------
+        list[Table]
+            List of all free tables from database
+        """
+        newsince = since + timedelta(hours = 2)
+        schedules = scheduleMapper.filter_on_date(since, newsince, True)
+        tables = tableMapper.join_with(count, schedules)
         return tables
