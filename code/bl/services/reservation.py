@@ -1,5 +1,4 @@
 from datetime import datetime, timedelta
-from dl.mapper.ireservation import IReservationMapper
 from dl.mapper.itable import ITableMapper
 from dl.entity.reservation import Reservation
 
@@ -20,7 +19,7 @@ class ReservationService:
     bool
         True at success, False when reservation fails
     """
-    def add_reservation(self, time: datetime, tableID: int, reservationMapper: IReservationMapper, tableMapper: ITableMapper) -> bool:
+    def add_reservation(self, time: datetime, tableID: int, tableMapper: ITableMapper) -> bool:
         reservation = Reservation(Datumod=time, Datumdo=time + timedelta(hours=2))
         reservation.stul_collection.append(tableMapper.get(tableID))
         return True

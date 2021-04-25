@@ -5,9 +5,6 @@ from .forms import ReservationForm, TableSelectForm
 from bl.services.table import TableService
 
 from dl.mapper.table import ITableMapper
-from dl.mapper.schedule import IScheduleMapper
-from dl.mapper.reservation import IReservationMapper
-
 from bl.services.reservation import ReservationService
 
 from datetime import datetime
@@ -40,7 +37,7 @@ class ReservationController:
 
     @staticmethod
     @reservation_bp.route('select-table', methods=['GET', 'POST'])
-    def select_table(table_mapper: ITableMapper, schedule_mapper: IScheduleMapper) -> Union[str, Response]:
+    def select_table(table_mapper: ITableMapper) -> Union[str, Response]:
         """
         routes to /reserve/select-table
 
@@ -58,7 +55,7 @@ class ReservationController:
 
     @staticmethod
     @reservation_bp.route('finish', methods=['GET', 'POST'])
-    def finish(reservation_service_mapper:ReservationService, reservation_mapper:IReservationMapper, table_mapper:ITableMapper) -> str:
+    def finish(reservation_service_mapper:ReservationService, table_mapper:ITableMapper) -> str:
         """
         routes to /reserve/finish
 
@@ -66,5 +63,5 @@ class ReservationController:
         """
         dtime = datetime.fromisoformat(request.args['dtime'])
         table_id = request.args['table_id']
-        success = reservation_service_mapper.add_reservation(dtime, table_id, reservation_mapper, table_mapper)
+        success = reservation_service_mapper.add_reservation(dtime, table_id, table_mapper)
         return render_template('reserve_final.html', dtime=dtime, table_id=table_id, success=success)
