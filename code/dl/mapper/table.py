@@ -40,5 +40,5 @@ class TableMapper(ITableMapper):
                     cast(Schedule.Datumdo, DateTime) >= until,
                     Schedule.Jedostupny == True
                     )
-                    .all()
+            .all()
         )
