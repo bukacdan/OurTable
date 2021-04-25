@@ -3,7 +3,6 @@ from dl.mapper.table import TableMapper
 from dl.mapper.schedule import ScheduleMapper
 
 class TableService:
-    @staticmethod
     def get_free_tables(self, since, count):
         allTables = TableMapper.get_all()
         allSchedules = ScheduleMapper.get_all()
