@@ -1,4 +1,4 @@
-from dl.entity.base import session
+from dl.entity.db_engine import DBEngine
 from dl.entity.meal_order import MealOrder
 from dl.mapper.imeal_order import IMealOrderMapper
 
@@ -8,22 +8,22 @@ class MealOrderMapper(IMealOrderMapper):
         pass
 
     def get_all(self):
-        mealorders = session.query(MealOrder).all()
+        mealorders = DBEngine.get_session().query(MealOrder).all()
         return mealorders
 
     def get(self, obj_id):
-        return session.query(MealOrder).filter(MealOrder.Objednavka_jidlaID == obj_id).first()
+        return DBEngine.get_session().query(MealOrder).filter(MealOrder.Objednavka_jidlaID == obj_id).first()
 
     def add(self, obj):
         if self.get(obj.Objednavka_jidlaID):
             return False
-        session.add(obj)
-        session.commit()
+        DBEngine.get_session().add(obj)
+        DBEngine.get_session().commit()
         return True
 
     def delete(self, obj):
         if not self.get(obj.Objednavka_jidlaID):
             return False
-        session.delete(obj)
-        session.commit()
+        DBEngine.get_session().delete(obj)
+        DBEngine.get_session().commit()
         return True
