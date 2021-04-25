@@ -22,14 +22,14 @@ INSERT INTO "Stul" ("Pocetmist") VALUES(3);
 
 /* Inserting table schedules */
 
-INSERT INTO "Rozvrh" ("Datumdo", "Datumod", "Jedostupny", "StulID") VALUES ('2000-01-01 00:00:00.001', '3000-01-01 00:00:00.001', '1', 3);
-INSERT INTO "Rozvrh" ("Datumdo", "Datumod", "Jedostupny", "StulID") VALUES ('2021-04-21 00:00:00.001', '2021-04-22 00:00:00.001', '1', 1);
-INSERT INTO "Rozvrh" ("Datumdo", "Datumod", "Jedostupny", "StulID") VALUES ('2021-04-21 00:00:00.001', '2021-04-22 00:00:00.001', '0', 2);
+INSERT INTO "Rozvrh" ("Datumdo", "Datumod", "Jedostupny", "StulID") VALUES ('3000-01-01 00:00:00.001', '2000-01-01 00:00:00.001', '1', 3);
+INSERT INTO "Rozvrh" ("Datumdo", "Datumod", "Jedostupny", "StulID") VALUES ('2021-04-22 00:00:00.001', '2021-04-21 00:00:00.001', '1', 1);
+INSERT INTO "Rozvrh" ("Datumdo", "Datumod", "Jedostupny", "StulID") VALUES ('2021-04-22 00:00:00.001', '2021-04-21 00:00:00.001', '0', 2);
 INSERT INTO "Rozvrh" ("Datumdo", "Datumod", "Jedostupny", "StulID") VALUES ('2021-04-21 19:00:00.001', '2021-04-21 21:00:00.001', '1', 4);
-INSERT INTO "Rozvrh" ("Datumdo", "Datumod", "Jedostupny", "StulID") VALUES ('2021-04-01 15:30:00.001', '2021-04-10 16:00:00.001', '1', 5);
-INSERT INTO "Rozvrh" ("Datumdo", "Datumod", "Jedostupny", "StulID") VALUES ('2021-04-20 00:00:00.001', '2021-04-24 00:00:00.001', '1', 6);
-INSERT INTO "Rozvrh" ("Datumdo", "Datumod", "Jedostupny", "StulID") VALUES ('2021-04-22 00:00:00.001', '2021-04-01 23:00:00.001', '0', 1);
-INSERT INTO "Rozvrh" ("Datumdo", "Datumod", "Jedostupny", "StulID") VALUES ('2021-04-22 00:00:00.001', '2021-04-22 12:00:00.001', '1', 2);
+INSERT INTO "Rozvrh" ("Datumdo", "Datumod", "Jedostupny", "StulID") VALUES ('2021-04-10 16:00:00.001', '2021-04-01 15:30:00.001', '1', 5);
+INSERT INTO "Rozvrh" ("Datumdo", "Datumod", "Jedostupny", "StulID") VALUES ('2021-04-24 00:00:00.001', '2021-04-20 00:00:00.001', '1', 6);
+INSERT INTO "Rozvrh" ("Datumdo", "Datumod", "Jedostupny", "StulID") VALUES ('2021-04-01 23:00:00.001', '2021-04-22 00:00:00.001', '0', 1);
+INSERT INTO "Rozvrh" ("Datumdo", "Datumod", "Jedostupny", "StulID") VALUES ('2021-04-22 12:00:00.001', '2021-04-22 00:00:00.001', '1', 2);
 
 /* Inserting alergens */
 
