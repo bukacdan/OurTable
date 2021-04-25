@@ -29,8 +29,14 @@ class ScheduleMapper(IScheduleMapper):
         return True
 
     def filter_on_date(self, since, until, availability):
-        schedules = DBEngine.get_session().query(Schedule).filter(
-            Schedule.Datumod == since,
-            Schedule.Datumdo == until,
-            Schedule.Jedostupny == availability).all()
+        #schedules = DBEngine.get_session().query(Schedule).filter(
+        #    Schedule.Datumod <= since,
+        #    Schedule.Datumdo >= until,
+        #    Schedule.Jedostupny == availability).all()
+        alls = DBEngine().get_session().query(Schedule).all()
+        schedules = []
+        for s in alls:
+            if s.Datumdo <= since and s.Datumod >= until and s.Jedostupny == availability:
+                schedules.add(s)
+
         return schedules

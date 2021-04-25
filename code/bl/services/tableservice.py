@@ -29,9 +29,15 @@ class TableService:
         list[Table]
             List of all free tables from database
         """
-        newsince = since + timedelta(hours=2)
-        schedules = schedule_mapper.filter_on_date(since, newsince, True)
-        if not schedules:
-            return []
-        tables = table_mapper.get_with(count, schedules)
+        tables = table_mapper.tbl(since, count)
         return tables
+
+
+
+        #newsince = since + timedelta(hours=2)
+        #schedules = schedule_mapper.filter_on_date(since, newsince, True)
+        #schedules = schedule_mapper.get_all()
+        #if not schedules:
+        #    return []
+        #tables = table_mapper.get_with(count, schedules)
+        #return tables
