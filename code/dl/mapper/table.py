@@ -1,5 +1,6 @@
 from dl.entity.db_engine import DBEngine
 from dl.entity.table import Table
+from dl.entity.schedule import Schedule
 from dl.mapper.itable import ITableMapper
 
 
@@ -30,6 +31,6 @@ class TableMapper(ITableMapper):
 
     def get_with(self, seats, schedules):
         tables = DBEngine.get_session().query(Table).join(
-            schedules, schedule.StulID == Table.StulID
+            schedules, Schedule.StulID == Table.StulID
         ).filter(Table.Pocetmist >= seats).all()
         return tables
