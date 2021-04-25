@@ -27,11 +27,3 @@ class ReservationMapper(IReservationMapper):
         DBEngine.get_session().delete(obj)
         DBEngine.get_session().commit()
         return True
-
-    @staticmethod
-    def tmp_add (time, tableID):
-        reservation = Reservation (Datumdo = time + datetime.timedelta(hours = 2), Datumod = time)
-        reservation.StulID.append(tableID)
-        DBEngine.get_session().add(reservation)
-        DBEngine.get_session().commit()
-        return True
