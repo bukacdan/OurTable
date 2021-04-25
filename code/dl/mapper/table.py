@@ -30,9 +30,4 @@ class TableMapper(ITableMapper):
         session.commit()
         return True
 
-    def get_all_free(self, since, count):
-        newsince = since + datetime.timedelta(hours = 2)
-        schedules = session.query(Schedule).filter(datetime.fromisoformat(Schedule.Datumdo) >= newsince, Schedule.Dotumod <= since)
-
-        tables = Table.join(schedules, Table.StulID  == schedules.StulID)
-        return tables
+    
