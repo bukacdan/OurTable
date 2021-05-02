@@ -1,0 +1,1439 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dl.mapper package &mdash; ourTable  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pl package" href="pl.html" />
+    <link rel="prev" title="dl.entity package" href="dl.entity.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ourTable
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="bl.html">bl package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">config module</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="dl.html">dl package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="dl.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="dl.entity.html">dl.entity package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">dl.mapper package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dl.html#module-dl">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pl.html">pl package</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ourTable</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">code</a> &raquo;</li>
+        
+          <li><a href="dl.html">dl package</a> &raquo;</li>
+        
+      <li>dl.mapper package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/dl.mapper.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="dl-mapper-package">
+<h1>dl.mapper package<a class="headerlink" href="#dl-mapper-package" title="Permalink to this headline">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-dl.mapper.address">
+<span id="dl-mapper-address-module"></span><h2>dl.mapper.address module<a class="headerlink" href="#module-dl.mapper.address" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="dl.mapper.address.AddressMapper">
+<em class="property">class </em><code class="sig-prename descclassname">dl.mapper.address.</code><code class="sig-name descname">AddressMapper</code><a class="headerlink" href="#dl.mapper.address.AddressMapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dl.mapper.iaddress.IAddressMapper" title="dl.mapper.iaddress.IAddressMapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">dl.mapper.iaddress.IAddressMapper</span></code></a></p>
+<dl class="py method">
+<dt id="dl.mapper.address.AddressMapper.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Adresa</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.address.AddressMapper.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an address to database</p>
+<dl class="simple">
+<dt>address: Address</dt><dd><p>Address to add to database</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when address is already in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.address.AddressMapper.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Adresa</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.address.AddressMapper.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes an address from database</p>
+<dl class="simple">
+<dt>address: Address</dt><dd><p>Address to delete from database</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when address is not in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.address.AddressMapper.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.address.AddressMapper.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves an address from database</p>
+<dl class="simple">
+<dt>address_ID: int</dt><dd><p>ID of the address to retrieve</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Address</dt><dd><p>Address from database with the specified ID</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.address.AddressMapper.get_all">
+<code class="sig-name descname">get_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.address.AddressMapper.get_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves all addresses from database</p>
+<dl class="simple">
+<dt>list[Address]</dt><dd><p>All addresses from database</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-dl.mapper.alergen">
+<span id="dl-mapper-alergen-module"></span><h2>dl.mapper.alergen module<a class="headerlink" href="#module-dl.mapper.alergen" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="dl.mapper.alergen.AlergenMapper">
+<em class="property">class </em><code class="sig-prename descclassname">dl.mapper.alergen.</code><code class="sig-name descname">AlergenMapper</code><a class="headerlink" href="#dl.mapper.alergen.AlergenMapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dl.mapper.ialergen.IAlergenMapper" title="dl.mapper.ialergen.IAlergenMapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">dl.mapper.ialergen.IAlergenMapper</span></code></a></p>
+<dl class="py method">
+<dt id="dl.mapper.alergen.AlergenMapper.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Alergen</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.alergen.AlergenMapper.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an alergen to database</p>
+<dl class="simple">
+<dt>alergen: Alergen</dt><dd><p>Alergen to add to database</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when alergen is already in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.alergen.AlergenMapper.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Alergen</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.alergen.AlergenMapper.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes an alergen from database</p>
+<dl class="simple">
+<dt>alergen: Alergen</dt><dd><p>Alergen to remove from database</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when alergen is not in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.alergen.AlergenMapper.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.alergen.AlergenMapper.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves an alergen from database with the specified ID</p>
+<dl class="simple">
+<dt>alergen_id: int</dt><dd><p>ID of the alergen to retrieve</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Alergen</dt><dd><p>Alergen from database with the specified ID</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.alergen.AlergenMapper.get_all">
+<code class="sig-name descname">get_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.alergen.AlergenMapper.get_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves all alergens from database</p>
+<dl class="simple">
+<dt>list[Alergen]</dt><dd><p>List of all alergens from database</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-dl.mapper.customer">
+<span id="dl-mapper-customer-module"></span><h2>dl.mapper.customer module<a class="headerlink" href="#module-dl.mapper.customer" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="dl.mapper.customer.CustomerMapper">
+<em class="property">class </em><code class="sig-prename descclassname">dl.mapper.customer.</code><code class="sig-name descname">CustomerMapper</code><a class="headerlink" href="#dl.mapper.customer.CustomerMapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dl.mapper.icustomer.ICustomerMapper" title="dl.mapper.icustomer.ICustomerMapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">dl.mapper.icustomer.ICustomerMapper</span></code></a></p>
+<dl class="py method">
+<dt id="dl.mapper.customer.CustomerMapper.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Uzivatel</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.customer.CustomerMapper.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a customer to database</p>
+<dl class="simple">
+<dt>customer: Customer</dt><dd><p>Customer to add to database</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when customer is already in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.customer.CustomerMapper.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Uzivatel</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.customer.CustomerMapper.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a customer from database</p>
+<dl class="simple">
+<dt>customer: Customer</dt><dd><p>Customer to remove from database</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when customer is not in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.customer.CustomerMapper.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.customer.CustomerMapper.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves a customer from database with the specified ID</p>
+<dl class="simple">
+<dt>customer_id: int</dt><dd><p>ID of the customer to retrieve</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Customer</dt><dd><p>Customer from database with the specified ID</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.customer.CustomerMapper.get_all">
+<code class="sig-name descname">get_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.customer.CustomerMapper.get_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves all customers from database</p>
+<dl class="simple">
+<dt>list[Customer]</dt><dd><p>List of all customers from database</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-dl.mapper.iaddress">
+<span id="dl-mapper-iaddress-module"></span><h2>dl.mapper.iaddress module<a class="headerlink" href="#module-dl.mapper.iaddress" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="dl.mapper.iaddress.IAddressMapper">
+<em class="property">class </em><code class="sig-prename descclassname">dl.mapper.iaddress.</code><code class="sig-name descname">IAddressMapper</code><a class="headerlink" href="#dl.mapper.iaddress.IAddressMapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dl.mapper.ibase.IBaseMapper" title="dl.mapper.ibase.IBaseMapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">dl.mapper.ibase.IBaseMapper</span></code></a></p>
+<p>Interface for AddressMapper</p>
+<dl class="py method">
+<dt id="dl.mapper.iaddress.IAddressMapper.add">
+<em class="property">abstract </em><code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">address</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Adresa</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dl.mapper.iaddress.IAddressMapper.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an address to database</p>
+<dl class="simple">
+<dt>address: Address</dt><dd><p>Address to add to database</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when address is already in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.iaddress.IAddressMapper.delete">
+<em class="property">abstract </em><code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">address</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Adresa</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dl.mapper.iaddress.IAddressMapper.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes an address from database</p>
+<dl class="simple">
+<dt>address: Address</dt><dd><p>Address to delete from database</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when address is not in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.iaddress.IAddressMapper.get">
+<em class="property">abstract </em><code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">address_ID</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; sqlalchemy.ext.automap.Adresa<a class="headerlink" href="#dl.mapper.iaddress.IAddressMapper.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves an address from database</p>
+<dl class="simple">
+<dt>address_ID: int</dt><dd><p>ID of the address to retrieve</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Address</dt><dd><p>Address from database with the specified ID</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.iaddress.IAddressMapper.get_all">
+<em class="property">abstract </em><code class="sig-name descname">get_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>sqlalchemy.ext.automap.Adresa<span class="p">]</span><a class="headerlink" href="#dl.mapper.iaddress.IAddressMapper.get_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves all addresses from database</p>
+<dl class="simple">
+<dt>list[Address]</dt><dd><p>All addresses from database</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-dl.mapper.ialergen">
+<span id="dl-mapper-ialergen-module"></span><h2>dl.mapper.ialergen module<a class="headerlink" href="#module-dl.mapper.ialergen" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="dl.mapper.ialergen.IAlergenMapper">
+<em class="property">class </em><code class="sig-prename descclassname">dl.mapper.ialergen.</code><code class="sig-name descname">IAlergenMapper</code><a class="headerlink" href="#dl.mapper.ialergen.IAlergenMapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dl.mapper.ibase.IBaseMapper" title="dl.mapper.ibase.IBaseMapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">dl.mapper.ibase.IBaseMapper</span></code></a></p>
+<p>Interface for AlergenMapper</p>
+<dl class="py method">
+<dt id="dl.mapper.ialergen.IAlergenMapper.add">
+<em class="property">abstract </em><code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">alergen</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Alergen</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dl.mapper.ialergen.IAlergenMapper.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an alergen to database</p>
+<dl class="simple">
+<dt>alergen: Alergen</dt><dd><p>Alergen to add to database</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when alergen is already in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.ialergen.IAlergenMapper.delete">
+<em class="property">abstract </em><code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">alergen</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dl.mapper.ialergen.IAlergenMapper.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes an alergen from database</p>
+<dl class="simple">
+<dt>alergen: Alergen</dt><dd><p>Alergen to remove from database</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when alergen is not in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.ialergen.IAlergenMapper.get">
+<em class="property">abstract </em><code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">alergen_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; sqlalchemy.ext.automap.Alergen<a class="headerlink" href="#dl.mapper.ialergen.IAlergenMapper.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves an alergen from database with the specified ID</p>
+<dl class="simple">
+<dt>alergen_id: int</dt><dd><p>ID of the alergen to retrieve</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Alergen</dt><dd><p>Alergen from database with the specified ID</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.ialergen.IAlergenMapper.get_all">
+<em class="property">abstract </em><code class="sig-name descname">get_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>object<span class="p">]</span><a class="headerlink" href="#dl.mapper.ialergen.IAlergenMapper.get_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves all alergens from database</p>
+<dl class="simple">
+<dt>list[Alergen]</dt><dd><p>List of all alergens from database</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-dl.mapper.ibase">
+<span id="dl-mapper-ibase-module"></span><h2>dl.mapper.ibase module<a class="headerlink" href="#module-dl.mapper.ibase" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="dl.mapper.ibase.IBaseMapper">
+<em class="property">class </em><code class="sig-prename descclassname">dl.mapper.ibase.</code><code class="sig-name descname">IBaseMapper</code><a class="headerlink" href="#dl.mapper.ibase.IBaseMapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Base interface for all data mappers</p>
+<p>You will see parameter ‘obj’ that is not typed.
+The type of object is dependent on the child class.
+This interface should not be used, as it only serves
+as a common ancestor for other interfaces.</p>
+<dl class="py method">
+<dt id="dl.mapper.ibase.IBaseMapper.add">
+<em class="property">abstract </em><code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dl.mapper.ibase.IBaseMapper.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an object to the database</p>
+<dl class="simple">
+<dt>obj:</dt><dd><p>New object for database</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when object is already in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.ibase.IBaseMapper.delete">
+<em class="property">abstract </em><code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dl.mapper.ibase.IBaseMapper.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes an object from the database</p>
+<dl class="simple">
+<dt>obj: object</dt><dd><p>Old object for removal</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when object is not in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.ibase.IBaseMapper.get">
+<em class="property">abstract </em><code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; object<a class="headerlink" href="#dl.mapper.ibase.IBaseMapper.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves an object from specific table with the specified ID</p>
+<dl class="simple">
+<dt>obj_id: int</dt><dd><p>ID of object we want to get from database</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>object</dt><dd><p>object from specific table</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.ibase.IBaseMapper.get_all">
+<em class="property">abstract </em><code class="sig-name descname">get_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>object<span class="p">]</span><a class="headerlink" href="#dl.mapper.ibase.IBaseMapper.get_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves all objects from specific table</p>
+<dl class="simple">
+<dt>list[object]</dt><dd><p>All objects from specific table in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-dl.mapper.icustomer">
+<span id="dl-mapper-icustomer-module"></span><h2>dl.mapper.icustomer module<a class="headerlink" href="#module-dl.mapper.icustomer" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="dl.mapper.icustomer.ICustomerMapper">
+<em class="property">class </em><code class="sig-prename descclassname">dl.mapper.icustomer.</code><code class="sig-name descname">ICustomerMapper</code><a class="headerlink" href="#dl.mapper.icustomer.ICustomerMapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dl.mapper.ibase.IBaseMapper" title="dl.mapper.ibase.IBaseMapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">dl.mapper.ibase.IBaseMapper</span></code></a></p>
+<p>Interface for customer mapper</p>
+<dl class="py method">
+<dt id="dl.mapper.icustomer.ICustomerMapper.add">
+<em class="property">abstract </em><code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">customer</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Uzivatel</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dl.mapper.icustomer.ICustomerMapper.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a customer to database</p>
+<dl class="simple">
+<dt>customer: Customer</dt><dd><p>Customer to add to database</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when customer is already in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.icustomer.ICustomerMapper.delete">
+<em class="property">abstract </em><code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">customer</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Uzivatel</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dl.mapper.icustomer.ICustomerMapper.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a customer from database</p>
+<dl class="simple">
+<dt>customer: Customer</dt><dd><p>Customer to remove from database</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when customer is not in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.icustomer.ICustomerMapper.get">
+<em class="property">abstract </em><code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">customer_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; sqlalchemy.ext.automap.Uzivatel<a class="headerlink" href="#dl.mapper.icustomer.ICustomerMapper.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves a customer from database with the specified ID</p>
+<dl class="simple">
+<dt>customer_id: int</dt><dd><p>ID of the customer to retrieve</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Customer</dt><dd><p>Customer from database with the specified ID</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.icustomer.ICustomerMapper.get_all">
+<em class="property">abstract </em><code class="sig-name descname">get_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>sqlalchemy.ext.automap.Uzivatel<span class="p">]</span><a class="headerlink" href="#dl.mapper.icustomer.ICustomerMapper.get_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves all customers from database</p>
+<dl class="simple">
+<dt>list[Customer]</dt><dd><p>List of all customers from database</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-dl.mapper.imeal">
+<span id="dl-mapper-imeal-module"></span><h2>dl.mapper.imeal module<a class="headerlink" href="#module-dl.mapper.imeal" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="dl.mapper.imeal.IMealMapper">
+<em class="property">class </em><code class="sig-prename descclassname">dl.mapper.imeal.</code><code class="sig-name descname">IMealMapper</code><a class="headerlink" href="#dl.mapper.imeal.IMealMapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dl.mapper.ibase.IBaseMapper" title="dl.mapper.ibase.IBaseMapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">dl.mapper.ibase.IBaseMapper</span></code></a></p>
+<p>Interface for MealMapper</p>
+<dl class="py method">
+<dt id="dl.mapper.imeal.IMealMapper.add">
+<em class="property">abstract </em><code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">meal</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Jidlo</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dl.mapper.imeal.IMealMapper.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a meal to database</p>
+<dl class="simple">
+<dt>meal: Meal</dt><dd><p>Meal to add to database</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when meal is already in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.imeal.IMealMapper.delete">
+<em class="property">abstract </em><code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">meal</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Jidlo</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dl.mapper.imeal.IMealMapper.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a meal from database</p>
+<dl class="simple">
+<dt>meal: Meal</dt><dd><p>Meal to delete</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when meal is not in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.imeal.IMealMapper.get">
+<em class="property">abstract </em><code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">meal_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; sqlalchemy.ext.automap.Jidlo<a class="headerlink" href="#dl.mapper.imeal.IMealMapper.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves a meal from database</p>
+<dl class="simple">
+<dt>meal_id: int</dt><dd><p>ID of the meal we want to get</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Meal</dt><dd><p>Meal with the specified ID</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.imeal.IMealMapper.get_all">
+<em class="property">abstract </em><code class="sig-name descname">get_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>sqlalchemy.ext.automap.Jidlo<span class="p">]</span><a class="headerlink" href="#dl.mapper.imeal.IMealMapper.get_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves all meals from database</p>
+<dl class="simple">
+<dt>list[Meal]</dt><dd><p>List of all meals from database</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-dl.mapper.imeal_order">
+<span id="dl-mapper-imeal-order-module"></span><h2>dl.mapper.imeal_order module<a class="headerlink" href="#module-dl.mapper.imeal_order" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="dl.mapper.imeal_order.IMealOrderMapper">
+<em class="property">class </em><code class="sig-prename descclassname">dl.mapper.imeal_order.</code><code class="sig-name descname">IMealOrderMapper</code><a class="headerlink" href="#dl.mapper.imeal_order.IMealOrderMapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dl.mapper.ibase.IBaseMapper" title="dl.mapper.ibase.IBaseMapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">dl.mapper.ibase.IBaseMapper</span></code></a></p>
+<p>Interface for MealOrderMapper</p>
+<dl class="py method">
+<dt id="dl.mapper.imeal_order.IMealOrderMapper.add">
+<em class="property">abstract </em><code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">meal_order</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Objednavka_jidla</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dl.mapper.imeal_order.IMealOrderMapper.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a meal order to database</p>
+<dl class="simple">
+<dt>meal_order: MealOrder</dt><dd><p>Meal order to add to database</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when meal order is already in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.imeal_order.IMealOrderMapper.delete">
+<em class="property">abstract </em><code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">meal_order</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Objednavka_jidla</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dl.mapper.imeal_order.IMealOrderMapper.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a meal order from database</p>
+<dl class="simple">
+<dt>meal_order: MealOrder</dt><dd><p>Meal order to delete</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when meal order is not in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.imeal_order.IMealOrderMapper.get">
+<em class="property">abstract </em><code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">meal_order_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; sqlalchemy.ext.automap.Objednavka_jidla<a class="headerlink" href="#dl.mapper.imeal_order.IMealOrderMapper.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves a meal order from database</p>
+<dl class="simple">
+<dt>meal_order_id: int</dt><dd><p>ID of the meal order we want to get</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>MealOrder</dt><dd><p>Meal order with the specified ID</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.imeal_order.IMealOrderMapper.get_all">
+<em class="property">abstract </em><code class="sig-name descname">get_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>sqlalchemy.ext.automap.Objednavka_jidla<span class="p">]</span><a class="headerlink" href="#dl.mapper.imeal_order.IMealOrderMapper.get_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves all meal orders from database</p>
+<dl class="simple">
+<dt>list[MealOrder]</dt><dd><p>List of all meal orders from database</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-dl.mapper.imenu">
+<span id="dl-mapper-imenu-module"></span><h2>dl.mapper.imenu module<a class="headerlink" href="#module-dl.mapper.imenu" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="dl.mapper.imenu.IMenuMapper">
+<em class="property">class </em><code class="sig-prename descclassname">dl.mapper.imenu.</code><code class="sig-name descname">IMenuMapper</code><a class="headerlink" href="#dl.mapper.imenu.IMenuMapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dl.mapper.ibase.IBaseMapper" title="dl.mapper.ibase.IBaseMapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">dl.mapper.ibase.IBaseMapper</span></code></a></p>
+<p>Interface for MenuMapper</p>
+<dl class="py method">
+<dt id="dl.mapper.imenu.IMenuMapper.add">
+<em class="property">abstract </em><code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">menu</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Menu</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dl.mapper.imenu.IMenuMapper.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a menu to database</p>
+<dl class="simple">
+<dt>menu: Menu</dt><dd><p>Menu to add to database</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when menu is already in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.imenu.IMenuMapper.delete">
+<em class="property">abstract </em><code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">menu</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Menu</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dl.mapper.imenu.IMenuMapper.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a menu from database</p>
+<dl class="simple">
+<dt>menu: Menu</dt><dd><p>Menu to delete</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when menu is not in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.imenu.IMenuMapper.get">
+<em class="property">abstract </em><code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">menu_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; sqlalchemy.ext.automap.Menu<a class="headerlink" href="#dl.mapper.imenu.IMenuMapper.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves a menu from database</p>
+<dl class="simple">
+<dt>menu_id: int</dt><dd><p>ID of the menu we want to get</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Menu</dt><dd><p>Menu with the specified ID</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.imenu.IMenuMapper.get_all">
+<em class="property">abstract </em><code class="sig-name descname">get_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>sqlalchemy.ext.automap.Menu<span class="p">]</span><a class="headerlink" href="#dl.mapper.imenu.IMenuMapper.get_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves all menus from database</p>
+<dl class="simple">
+<dt>list[Menu]</dt><dd><p>List of all menus from database</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-dl.mapper.ireservation">
+<span id="dl-mapper-ireservation-module"></span><h2>dl.mapper.ireservation module<a class="headerlink" href="#module-dl.mapper.ireservation" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="dl.mapper.ireservation.IReservationMapper">
+<em class="property">class </em><code class="sig-prename descclassname">dl.mapper.ireservation.</code><code class="sig-name descname">IReservationMapper</code><a class="headerlink" href="#dl.mapper.ireservation.IReservationMapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dl.mapper.ibase.IBaseMapper" title="dl.mapper.ibase.IBaseMapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">dl.mapper.ibase.IBaseMapper</span></code></a></p>
+<p>Interface for ReservationMapper</p>
+<dl class="py method">
+<dt id="dl.mapper.ireservation.IReservationMapper.add">
+<em class="property">abstract </em><code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">reservation</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Rezervace</span></em>, <em class="sig-param"><span class="n">tableMapper</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#dl.mapper.itable.ITableMapper" title="dl.mapper.itable.ITableMapper">dl.mapper.itable.ITableMapper</a></span></em>, <em class="sig-param"><span class="n">tableID</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dl.mapper.ireservation.IReservationMapper.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a reservation to database</p>
+<dl class="simple">
+<dt>reservation: Reservation</dt><dd><p>Reservation to add to database</p>
+</dd>
+<dt>tableMapper: ITableMapper</dt><dd><p>TableMapper to be injected</p>
+</dd>
+<dt>tableID: int</dt><dd><p>ID of the table to be reserved</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when reservation is already in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.ireservation.IReservationMapper.delete">
+<em class="property">abstract </em><code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">reservation</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Rezervace</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dl.mapper.ireservation.IReservationMapper.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a reservation from database</p>
+<dl class="simple">
+<dt>reservation: Reservation</dt><dd><p>Reservation to delete</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when reservation is not in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.ireservation.IReservationMapper.get">
+<em class="property">abstract </em><code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">reservation_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; sqlalchemy.ext.automap.Rezervace<a class="headerlink" href="#dl.mapper.ireservation.IReservationMapper.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves a reservation from database</p>
+<dl class="simple">
+<dt>reservation_id: int</dt><dd><p>ID of the reservation we want to get</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Reservation</dt><dd><p>Reservation with the specified ID</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.ireservation.IReservationMapper.get_all">
+<em class="property">abstract </em><code class="sig-name descname">get_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>sqlalchemy.ext.automap.Rezervace<span class="p">]</span><a class="headerlink" href="#dl.mapper.ireservation.IReservationMapper.get_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves all reservations from database</p>
+<dl class="simple">
+<dt>list[Reservation]</dt><dd><p>List of all reservations from database</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-dl.mapper.ischedule">
+<span id="dl-mapper-ischedule-module"></span><h2>dl.mapper.ischedule module<a class="headerlink" href="#module-dl.mapper.ischedule" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="dl.mapper.ischedule.IScheduleMapper">
+<em class="property">class </em><code class="sig-prename descclassname">dl.mapper.ischedule.</code><code class="sig-name descname">IScheduleMapper</code><a class="headerlink" href="#dl.mapper.ischedule.IScheduleMapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dl.mapper.ibase.IBaseMapper" title="dl.mapper.ibase.IBaseMapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">dl.mapper.ibase.IBaseMapper</span></code></a></p>
+<p>Interface for ScheduleMapper</p>
+<dl class="py method">
+<dt id="dl.mapper.ischedule.IScheduleMapper.add">
+<em class="property">abstract </em><code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">schedule</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Rozvrh</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dl.mapper.ischedule.IScheduleMapper.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a schedule to database</p>
+<dl class="simple">
+<dt>schedule: Schedule</dt><dd><p>Schedule to add to database</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when schedule is already in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.ischedule.IScheduleMapper.delete">
+<em class="property">abstract </em><code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">schedule</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Rozvrh</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dl.mapper.ischedule.IScheduleMapper.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a schedule from database</p>
+<dl class="simple">
+<dt>schedule: Schedule</dt><dd><p>Schedule to delete</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when schedule is not in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.ischedule.IScheduleMapper.get">
+<em class="property">abstract </em><code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">schedule_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; sqlalchemy.ext.automap.Rozvrh<a class="headerlink" href="#dl.mapper.ischedule.IScheduleMapper.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves a schedule from database</p>
+<dl class="simple">
+<dt>schedule_id: int</dt><dd><p>ID of the schedule we want to get</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Schedule</dt><dd><p>Schedule with the specified ID</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.ischedule.IScheduleMapper.get_all">
+<em class="property">abstract </em><code class="sig-name descname">get_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>sqlalchemy.ext.automap.Rozvrh<span class="p">]</span><a class="headerlink" href="#dl.mapper.ischedule.IScheduleMapper.get_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves all schedules from database</p>
+<dl class="simple">
+<dt>list[Schedule]</dt><dd><p>List of all schedules from database</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-dl.mapper.itable">
+<span id="dl-mapper-itable-module"></span><h2>dl.mapper.itable module<a class="headerlink" href="#module-dl.mapper.itable" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="dl.mapper.itable.ITableMapper">
+<em class="property">class </em><code class="sig-prename descclassname">dl.mapper.itable.</code><code class="sig-name descname">ITableMapper</code><a class="headerlink" href="#dl.mapper.itable.ITableMapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dl.mapper.ibase.IBaseMapper" title="dl.mapper.ibase.IBaseMapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">dl.mapper.ibase.IBaseMapper</span></code></a></p>
+<p>Interface for TableMapper</p>
+<dl class="py method">
+<dt id="dl.mapper.itable.ITableMapper.add">
+<em class="property">abstract </em><code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Stul</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dl.mapper.itable.ITableMapper.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a table to database</p>
+<dl class="simple">
+<dt>table: Table</dt><dd><p>Table to add to database</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when table is already in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.itable.ITableMapper.delete">
+<em class="property">abstract </em><code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Stul</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dl.mapper.itable.ITableMapper.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a table from database</p>
+<dl class="simple">
+<dt>table: Table</dt><dd><p>Table to delete</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when table is not in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.itable.ITableMapper.get">
+<em class="property">abstract </em><code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; sqlalchemy.ext.automap.Stul<a class="headerlink" href="#dl.mapper.itable.ITableMapper.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves a table from database</p>
+<dl class="simple">
+<dt>table_id: int</dt><dd><p>ID of the table we want to get</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Table</dt><dd><p>Table with the specified ID</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.itable.ITableMapper.get_all">
+<em class="property">abstract </em><code class="sig-name descname">get_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>sqlalchemy.ext.automap.Stul<span class="p">]</span><a class="headerlink" href="#dl.mapper.itable.ITableMapper.get_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves all tables from database</p>
+<dl class="simple">
+<dt>list[Table]</dt><dd><p>List of all tables from database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.itable.ITableMapper.get_free_tables">
+<em class="property">abstract </em><code class="sig-name descname">get_free_tables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">seats</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">since</span><span class="p">:</span> <span class="n">datetime.datetime</span></em>, <em class="sig-param"><span class="n">until</span><span class="p">:</span> <span class="n">datetime.datetime</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.itable.ITableMapper.get_free_tables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get free table for a given interval</p>
+<dl class="simple">
+<dt>seats: int</dt><dd><p>minimal number of seats</p>
+</dd>
+<dt>since: datetime</dt><dd><p>date from</p>
+</dd>
+<dt>until: datetime</dt><dd><p>date to</p>
+</dd>
+</dl>
+<p>Table satisfying given parameters</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-dl.mapper.meal">
+<span id="dl-mapper-meal-module"></span><h2>dl.mapper.meal module<a class="headerlink" href="#module-dl.mapper.meal" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="dl.mapper.meal.MealMapper">
+<em class="property">class </em><code class="sig-prename descclassname">dl.mapper.meal.</code><code class="sig-name descname">MealMapper</code><a class="headerlink" href="#dl.mapper.meal.MealMapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dl.mapper.imeal.IMealMapper" title="dl.mapper.imeal.IMealMapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">dl.mapper.imeal.IMealMapper</span></code></a></p>
+<dl class="py method">
+<dt id="dl.mapper.meal.MealMapper.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Jidlo</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.meal.MealMapper.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a meal to database</p>
+<dl class="simple">
+<dt>meal: Meal</dt><dd><p>Meal to add to database</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when meal is already in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.meal.MealMapper.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Jidlo</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.meal.MealMapper.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a meal from database</p>
+<dl class="simple">
+<dt>meal: Meal</dt><dd><p>Meal to delete</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when meal is not in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.meal.MealMapper.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.meal.MealMapper.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves a meal from database</p>
+<dl class="simple">
+<dt>meal_id: int</dt><dd><p>ID of the meal we want to get</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Meal</dt><dd><p>Meal with the specified ID</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.meal.MealMapper.get_all">
+<code class="sig-name descname">get_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.meal.MealMapper.get_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves all meals from database</p>
+<dl class="simple">
+<dt>list[Meal]</dt><dd><p>List of all meals from database</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-dl.mapper.meal_order">
+<span id="dl-mapper-meal-order-module"></span><h2>dl.mapper.meal_order module<a class="headerlink" href="#module-dl.mapper.meal_order" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="dl.mapper.meal_order.MealOrderMapper">
+<em class="property">class </em><code class="sig-prename descclassname">dl.mapper.meal_order.</code><code class="sig-name descname">MealOrderMapper</code><a class="headerlink" href="#dl.mapper.meal_order.MealOrderMapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dl.mapper.imeal_order.IMealOrderMapper" title="dl.mapper.imeal_order.IMealOrderMapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">dl.mapper.imeal_order.IMealOrderMapper</span></code></a></p>
+<dl class="py method">
+<dt id="dl.mapper.meal_order.MealOrderMapper.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Objednavka_jidla</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.meal_order.MealOrderMapper.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a meal order to database</p>
+<dl class="simple">
+<dt>meal_order: MealOrder</dt><dd><p>Meal order to add to database</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when meal order is already in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.meal_order.MealOrderMapper.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Objednavka_jidla</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.meal_order.MealOrderMapper.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a meal order from database</p>
+<dl class="simple">
+<dt>meal_order: MealOrder</dt><dd><p>Meal order to delete</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when meal order is not in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.meal_order.MealOrderMapper.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.meal_order.MealOrderMapper.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves a meal order from database</p>
+<dl class="simple">
+<dt>meal_order_id: int</dt><dd><p>ID of the meal order we want to get</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>MealOrder</dt><dd><p>Meal order with the specified ID</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.meal_order.MealOrderMapper.get_all">
+<code class="sig-name descname">get_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.meal_order.MealOrderMapper.get_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves all meal orders from database</p>
+<dl class="simple">
+<dt>list[MealOrder]</dt><dd><p>List of all meal orders from database</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-dl.mapper.menu">
+<span id="dl-mapper-menu-module"></span><h2>dl.mapper.menu module<a class="headerlink" href="#module-dl.mapper.menu" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="dl.mapper.menu.MenuMapper">
+<em class="property">class </em><code class="sig-prename descclassname">dl.mapper.menu.</code><code class="sig-name descname">MenuMapper</code><a class="headerlink" href="#dl.mapper.menu.MenuMapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dl.mapper.imenu.IMenuMapper" title="dl.mapper.imenu.IMenuMapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">dl.mapper.imenu.IMenuMapper</span></code></a></p>
+<dl class="py method">
+<dt id="dl.mapper.menu.MenuMapper.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Menu</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.menu.MenuMapper.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a menu to database</p>
+<dl class="simple">
+<dt>menu: Menu</dt><dd><p>Menu to add to database</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when menu is already in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.menu.MenuMapper.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Menu</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.menu.MenuMapper.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a menu from database</p>
+<dl class="simple">
+<dt>menu: Menu</dt><dd><p>Menu to delete</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when menu is not in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.menu.MenuMapper.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.menu.MenuMapper.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves a menu from database</p>
+<dl class="simple">
+<dt>menu_id: int</dt><dd><p>ID of the menu we want to get</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Menu</dt><dd><p>Menu with the specified ID</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.menu.MenuMapper.get_all">
+<code class="sig-name descname">get_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.menu.MenuMapper.get_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves all menus from database</p>
+<dl class="simple">
+<dt>list[Menu]</dt><dd><p>List of all menus from database</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-dl.mapper.reservation">
+<span id="dl-mapper-reservation-module"></span><h2>dl.mapper.reservation module<a class="headerlink" href="#module-dl.mapper.reservation" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="dl.mapper.reservation.ReservationMapper">
+<em class="property">class </em><code class="sig-prename descclassname">dl.mapper.reservation.</code><code class="sig-name descname">ReservationMapper</code><a class="headerlink" href="#dl.mapper.reservation.ReservationMapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dl.mapper.ireservation.IReservationMapper" title="dl.mapper.ireservation.IReservationMapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">dl.mapper.ireservation.IReservationMapper</span></code></a></p>
+<dl class="py method">
+<dt id="dl.mapper.reservation.ReservationMapper.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">reservation</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Rezervace</span></em>, <em class="sig-param"><span class="n">tableMapper</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#dl.mapper.itable.ITableMapper" title="dl.mapper.itable.ITableMapper">dl.mapper.itable.ITableMapper</a></span></em>, <em class="sig-param"><span class="n">tableID</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.reservation.ReservationMapper.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a reservation to database</p>
+<dl class="simple">
+<dt>reservation: Reservation</dt><dd><p>Reservation to add to database</p>
+</dd>
+<dt>tableMapper: ITableMapper</dt><dd><p>TableMapper to be injected</p>
+</dd>
+<dt>tableID: int</dt><dd><p>ID of the table to be reserved</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when reservation is already in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.reservation.ReservationMapper.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Rezervace</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.reservation.ReservationMapper.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a reservation from database</p>
+<dl class="simple">
+<dt>reservation: Reservation</dt><dd><p>Reservation to delete</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when reservation is not in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.reservation.ReservationMapper.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.reservation.ReservationMapper.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves a reservation from database</p>
+<dl class="simple">
+<dt>reservation_id: int</dt><dd><p>ID of the reservation we want to get</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Reservation</dt><dd><p>Reservation with the specified ID</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.reservation.ReservationMapper.get_all">
+<code class="sig-name descname">get_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.reservation.ReservationMapper.get_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves all reservations from database</p>
+<dl class="simple">
+<dt>list[Reservation]</dt><dd><p>List of all reservations from database</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-dl.mapper.schedule">
+<span id="dl-mapper-schedule-module"></span><h2>dl.mapper.schedule module<a class="headerlink" href="#module-dl.mapper.schedule" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="dl.mapper.schedule.ScheduleMapper">
+<em class="property">class </em><code class="sig-prename descclassname">dl.mapper.schedule.</code><code class="sig-name descname">ScheduleMapper</code><a class="headerlink" href="#dl.mapper.schedule.ScheduleMapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dl.mapper.ischedule.IScheduleMapper" title="dl.mapper.ischedule.IScheduleMapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">dl.mapper.ischedule.IScheduleMapper</span></code></a></p>
+<dl class="py method">
+<dt id="dl.mapper.schedule.ScheduleMapper.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Rozvrh</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.schedule.ScheduleMapper.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a schedule to database</p>
+<dl class="simple">
+<dt>schedule: Schedule</dt><dd><p>Schedule to add to database</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when schedule is already in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.schedule.ScheduleMapper.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Rozvrh</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.schedule.ScheduleMapper.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a schedule from database</p>
+<dl class="simple">
+<dt>schedule: Schedule</dt><dd><p>Schedule to delete</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when schedule is not in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.schedule.ScheduleMapper.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.schedule.ScheduleMapper.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves a schedule from database</p>
+<dl class="simple">
+<dt>schedule_id: int</dt><dd><p>ID of the schedule we want to get</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Schedule</dt><dd><p>Schedule with the specified ID</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.schedule.ScheduleMapper.get_all">
+<code class="sig-name descname">get_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.schedule.ScheduleMapper.get_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves all schedules from database</p>
+<dl class="simple">
+<dt>list[Schedule]</dt><dd><p>List of all schedules from database</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-dl.mapper.table">
+<span id="dl-mapper-table-module"></span><h2>dl.mapper.table module<a class="headerlink" href="#module-dl.mapper.table" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="dl.mapper.table.TableMapper">
+<em class="property">class </em><code class="sig-prename descclassname">dl.mapper.table.</code><code class="sig-name descname">TableMapper</code><a class="headerlink" href="#dl.mapper.table.TableMapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dl.mapper.itable.ITableMapper" title="dl.mapper.itable.ITableMapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">dl.mapper.itable.ITableMapper</span></code></a></p>
+<dl class="py method">
+<dt id="dl.mapper.table.TableMapper.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Stul</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.table.TableMapper.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a table to database</p>
+<dl class="simple">
+<dt>table: Table</dt><dd><p>Table to add to database</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when table is already in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.table.TableMapper.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">sqlalchemy.ext.automap.Stul</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.table.TableMapper.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a table from database</p>
+<dl class="simple">
+<dt>table: Table</dt><dd><p>Table to delete</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True on success, False when table is not in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.table.TableMapper.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.table.TableMapper.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves a table from database</p>
+<dl class="simple">
+<dt>table_id: int</dt><dd><p>ID of the table we want to get</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Table</dt><dd><p>Table with the specified ID</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.table.TableMapper.get_all">
+<code class="sig-name descname">get_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.table.TableMapper.get_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves all tables from database</p>
+<dl class="simple">
+<dt>list[Table]</dt><dd><p>List of all tables from database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dl.mapper.table.TableMapper.get_free_tables">
+<code class="sig-name descname">get_free_tables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">seats</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">since</span><span class="p">:</span> <span class="n">datetime.datetime</span></em>, <em class="sig-param"><span class="n">until</span><span class="p">:</span> <span class="n">datetime.datetime</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dl.mapper.table.TableMapper.get_free_tables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get free table for a given interval</p>
+<dl class="simple">
+<dt>seats: int</dt><dd><p>minimal number of seats</p>
+</dd>
+<dt>since: datetime</dt><dd><p>date from</p>
+</dd>
+<dt>until: datetime</dt><dd><p>date to</p>
+</dd>
+</dl>
+<p>Table satisfying given parameters</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-dl.mapper">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-dl.mapper" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pl.html" class="btn btn-neutral float-right" title="pl package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dl.entity.html" class="btn btn-neutral float-left" title="dl.entity package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Bukac Daniel, Renc Jakub, Szkandera Jiri, Hyvnar Ondrej
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
