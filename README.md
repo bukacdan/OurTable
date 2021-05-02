@@ -16,3 +16,7 @@ Personálu aplikace umožňuje kontrolu nad aktuálními rezervacemi, případn�
 |   Szkandera Jiří  |       0       |       0       |       0       |
 |   Renc Jakub      |       0       |       0       |       0       |
 |   Hývnar Ondřej   |       0       |       0       |       0       |
+
+## Změny oproti 2. iteraci
+
+* Opravili jsme využití table mapper vzoru v `bl/services/reservation.py` (v druhé iteraci byl porušen).
