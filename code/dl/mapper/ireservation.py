@@ -1,6 +1,7 @@
 from typing import List
 from abc import abstractmethod
 from dl.entity.reservation import Reservation
+from .itable import ITableMapper
 from .ibase import IBaseMapper
 
 
@@ -39,7 +40,7 @@ class IReservationMapper(IBaseMapper):
         pass
 
     @abstractmethod
-    def add(self, reservation: Reservation) -> bool:
+    def add(self, reservation: Reservation, tableMapper: ITableMapper, tableID: int) -> bool:
         """
         Adds a reservation to database
 
@@ -47,6 +48,10 @@ class IReservationMapper(IBaseMapper):
         ----------
         reservation: Reservation
             Reservation to add to database
+        tableMapper: ITableMapper
+            TableMapper to be injected
+        tableID: int
+            ID of the table to be reserved
 
         Returns
         ----------
